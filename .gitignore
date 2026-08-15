@@ -1,0 +1,17 @@
+# Never, ever tracked — this is the one folder no AI and no backup touches.
+Privat/
+
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.trash/
+.DS_Store
+*.conflicted copy*
+__pycache__/
+*.pyc
+.changelog-snapshot.json
+.context-baseline.json
+.route-cache.json
+
+# Rewritten by vault-snapshot.py every run, including its own timestamp —
+# tracking it would mean a commit every run forever, forever, for no reason.
+AIOS/generated/git-status.md

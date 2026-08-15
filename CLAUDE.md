@@ -1,0 +1,32 @@
+# CLAUDE.md
+
+Go immediately to `AIOS/me.md` and read it. Then read `AIOS/vault-map.md` and
+`AIOS/skill-map.md`.
+
+Do this every time without exception at the start of every session.
+
+Confirm in one line that you've read all three, then wait for instructions.
+
+Never read or write anything under `Privat/`.
+
+**If `AIOS/me.md` still contains `<< >>` placeholders, the vault has not been
+set up yet.** Say so, and offer to set it up — the trigger is just **"set
+yourself up"**, which runs the `setup-vault` skill end to end (scripts,
+skills, the interview, and a self-check) without needing anything else typed
+first. Working from an unfilled `me.md` means working with no rules at all.
+
+**If you can't confirm the six skills in `AIOS/skills/` are active as real,
+natively-triggering skills on this platform** (this is normal on Cowork —
+see `AIOS/skills/README.md`), **read `AIOS/skills/auto-capture/SKILL.md`,
+`AIOS/skills/vault-first/SKILL.md`, `AIOS/skills/vault-librarian/SKILL.md`
+and `AIOS/skills/no-bullshit/SKILL.md` now, in full, and follow them for this
+session anyway.** The vault is supposed to behave the same way whether or not
+the platform's own skill system is doing the work — these files are the
+actual behavior either way.
+
+---
+
+That's deliberately the entire file. All real content lives in `AIOS/`, which is
+provider-agnostic. If you switch AI providers, you write a new one-line pointer
+file (`gemini.md`, `agent.md`, whatever it wants) aimed at the same `AIOS/`
+folder — and nothing else changes.
