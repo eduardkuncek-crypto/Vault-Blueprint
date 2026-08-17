@@ -2235,3 +2235,29 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
   written to       AIOS/generated/git-status.md
 ```
+
+### 2026-08-17 23:50:05 — OK (3.22s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      a2e02ba vault snapshot: 2026-08-17 23:50:02
+  uncommitted      0 file(s)
+  unpushed         85
+  committed now    1 file(s)
+
+  NOTE  git push failed: To github.com:eduardkuncek-crypto/Vault-Blueprint.git
+ ! [rejected]        HEAD -> main (fetch first)
+error: failed to push some refs to 'github.com:eduardkuncek-crypto/Vault-Blueprint.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+  written to       AIOS/generated/git-status.md
+```
