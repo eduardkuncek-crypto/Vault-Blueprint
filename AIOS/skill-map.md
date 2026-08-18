@@ -34,6 +34,12 @@
 | `find-skills` | Looking for a skill that might already exist for something |
 | `docx` `xlsx` `pptx` `pdf` | Documents, spreadsheets, decks, PDFs |
 
+### Staying current
+
+| Skill | Use when |
+|---|---|
+| `update-vault` | **"update my vault from the blueprint".** Fetches the latest blueprint, works out what's genuinely different from *your* vault, reads the changes out in plain English, and applies only what you pick. Never overwrites anything you wrote. Keep this one — it's how every future improvement reaches you. |
+
 ### Setup only — delete when done
 
 | Skill | Use when |
@@ -206,6 +212,36 @@ answer to "is this actually backed up", since an AI reading the vault often
 can't run `git status` itself. First run creates the repo if there isn't one
 yet; a remote (GitHub, GitLab, your own server) is optional — without one it
 just commits locally.
+
+### `update-vault`
+
+Say **"update my vault from the blueprint"**. The blueprint this vault came
+from keeps getting better; this is how those improvements reach you without
+anyone re-downloading anything and losing their notes.
+
+```bash
+python3 AIOS/scripts/blueprint-update.py               # what's waiting
+python3 AIOS/scripts/blueprint-update.py --interactive # y/n through the list
+python3 AIOS/scripts/blueprint-update.py --check       # one line, for a schedule
+python3 AIOS/scripts/blueprint-update.py --undo        # put the last one back
+```
+
+It fetches the latest blueprint (git if you have it, a plain download if you
+don't), compares it against what you actually have, and lists what's different
+as questions you can answer — *"screenshots get their own folder now, want
+it?"* — not as file diffs. You pick. Anything you say no to is remembered and
+never raised again unless that specific thing later changes.
+
+**It cannot overwrite your writing.** Your notes, `Privat/`, and your answers
+in `AIOS/me.md` are off limits to the script by design. The four files that
+are half yours — `CLAUDE.md`, `me.md`, `vault-map.md`, `skill-map.md` — can
+only be merged sentence-by-sentence by your AI, never swapped wholesale.
+Everything it does touch is backed up to
+`AIOS/history/blueprint-updates/<date>/` first, which is what makes `--undo`
+real. Full behaviour: `AIOS/skills/update-vault/SKILL.md`.
+
+Adding `--check` to a daily schedule means you get told when something's
+waiting instead of having to remember to ask.
 
 ### `setup-check`
 

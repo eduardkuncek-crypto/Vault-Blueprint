@@ -24,6 +24,24 @@ session anyway.** The vault is supposed to behave the same way whether or not
 the platform's own skill system is doing the work — these files are the
 actual behavior either way.
 
+## Updating from the Vault Blueprint
+
+When I say **"update my vault from the blueprint"** (or anything close —
+"check for blueprint updates", "is there anything new in the blueprint"),
+follow `AIOS/skills/update-vault/SKILL.md` in full. Short version:
+
+1. `python3 AIOS/scripts/blueprint-update.py --json`
+2. Read every waiting change out to me in plain English — what it does for me,
+   not which file changed — numbered, and ask which ones I want.
+3. Apply the ones I picked with `--apply`. Record the ones I turned down with
+   `--decline`, so I'm never asked about them again.
+4. `CLAUDE.md`, `AIOS/me.md`, `AIOS/vault-map.md` and `AIOS/skill-map.md` are
+   half mine — never let the script write those. Merge the structural change
+   into them by hand and keep every word I wrote.
+
+Never apply anything without asking. Never touch `Privat/`. Never delete a
+file because the blueprint stopped shipping it.
+
 ---
 
 That's deliberately the entire file. All real content lives in `AIOS/`, which is

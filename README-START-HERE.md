@@ -140,6 +140,32 @@ The full guide, including why it's shaped this way: `AIOS/how-to-use-this.md`.
 
 ---
 
+## Keeping up with the blueprint
+
+This blueprint keeps getting better after you download it. Rather than making
+you re-download and lose your notes, your vault can pull the improvements in
+itself. Say:
+
+> **update my vault from the blueprint**
+
+It fetches the latest version, works out what's actually different from your
+copy, and reads the changes out to you one at a time in plain English —
+*"screenshots get their own folder now, want it?"* — and applies only what you
+pick. Anything you turn down is remembered and never asked about again.
+
+It cannot touch anything you wrote. Your notes, your `Privat/` folder and your
+answers in `AIOS/me.md` are off limits to it, and everything it does change is
+backed up first, so *"undo the last blueprint update"* is a real thing you can
+say. Details: `AIOS/skill-map.md` §`update-vault`.
+
+Prefer the terminal?
+
+```
+python3 AIOS/scripts/blueprint-update.py --interactive
+```
+
+---
+
 ## If something doesn't work
 
 Run this — it's the one command that tells you what's actually true, instead

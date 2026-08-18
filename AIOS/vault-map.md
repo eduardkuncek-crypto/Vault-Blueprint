@@ -34,6 +34,9 @@ and `Privat/` for the part no AI touches.
 | `AIOS/history/chat-history/cowork-raw/` | **Generated.** The same conversations exactly as Claude stored them (`.jsonl`) — the real backup; the Markdown above is for reading. | **No — machine-written** |
 | `AIOS/history/scripts/` | **Generated.** One run history note per script, appended automatically by `scriptlog.py` every time any script runs. | **No — machine-written** |
 | `AIOS/generated/` | **Generated.** `git-status.md` — whether the vault's optional git backup is actually committed and pushed, written by `vault-snapshot.py`. | **No — machine-written** |
+| `AIOS/reference/` | Docs opened on demand, never at session start. `canon.md` (facts that appear in more than one note) and `blueprint-changes.md` (what each blueprint update actually does, in plain English). | Yes |
+| `AIOS/config/` | Machine-readable state. `blueprint-manifest.json` says which shipped files belong to the blueprint versus to you; `blueprint-state.json` remembers which blueprint version you're on and what you've already said no to. | **Written by scripts — safe to delete, you'll just get re-asked once** |
+| `AIOS/history/blueprint-updates/` | **Generated.** A dated copy of every file a blueprint update overwrote, taken before it was overwritten. This is what makes `--undo` real instead of a promise. | **No — machine-written** |
 | `Atlas/` | Knowledge, reference, clippings. Timeless material. | Yes |
 | `Atlas/About Me/` | The long version of `me.md` — **one note per subject** about you as a person. | Yes |
 | `Atlas/Knowledge/` | Notes written to understand a concept. Output of `learn`. | Yes |
@@ -67,6 +70,9 @@ table is the difference between one file read and a folder scan.
 | **Is the vault healthy** | `python3 AIOS/scripts/vault-check.py` — reports only, changes nothing |
 | **Is the automation actually working** — chat backup, scheduled jobs, skills, `me.md` | `python3 AIOS/scripts/setup-check.py` — one pass/fail table, checks everything instead of assuming |
 | **Setting the vault up on a new computer**, or first-run setup | Say **"set yourself up"** — runs the `setup-vault` skill. Or directly: `python3 AIOS/scripts/setup.py` |
+| **Has the blueprint improved since I downloaded it** | Say **"update my vault from the blueprint"** — runs the `update-vault` skill. Or directly: `python3 AIOS/scripts/blueprint-update.py`. It never overwrites anything you wrote |
+| **What blueprint suggestions have I turned down** | `python3 AIOS/scripts/blueprint-update.py --show-declined` |
+| **Put back what the last update changed** | `python3 AIOS/scripts/blueprint-update.py --undo` |
 | Old conversations / chat transcripts | `AIOS/history/chat-history/cowork/` — generated automatically, don't edit |
 | Whether the optional git backup is working | `AIOS/generated/git-status.md`, written by `vault-snapshot.py` |
 | **What did the AI change, and when** | `Calendar/Daily/YYYY-MM-DD.md` → `## Changes` |

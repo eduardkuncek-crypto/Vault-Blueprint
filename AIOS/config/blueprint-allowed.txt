@@ -1,0 +1,27 @@
+# blueprint-allowed.txt
+#
+# The deny-list scan in blueprint-release.py refuses to ship anything that
+# names the author. A handful of places have to name the author — you can't
+# publish a repo without its own URL in it, and MIT requires a copyright line.
+# Those exceptions live here, one per line, each with a reason.
+#
+# Format:   <path glob> :: <regex that is allowed to match there>
+#
+# NOTHING ELSE. If you find yourself wanting to add a line here to silence a
+# hit, stop and ask whether the file should be saying that at all. This file
+# is where a real leak would hide, so it stays short enough to read in ten
+# seconds. Every entry needs a comment saying why.
+
+# MIT requires a copyright holder. That's the whole point of the licence.
+LICENSE :: \beduard\b
+LICENSE :: kuncek
+
+# The repo URL. A self-updating project has to know where it lives, and the
+# GitHub username is part of the URL. There is no way around this and it
+# leaks nothing that isn't already public the moment someone opens the repo.
+* :: eduardkuncek-crypto
+* :: github\.com/eduardkuncek
+
+# The updater ships the fallback path to the private vault's deny list so it
+# can scan when run next to the original. That's a folder name, not content.
+AIOS/scripts/blueprint-release.py :: \bai os\b

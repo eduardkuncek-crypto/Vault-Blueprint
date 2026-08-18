@@ -1,0 +1,369 @@
+{
+  "_classes": {
+    "brain": "Half theirs. A script never writes it; their AI merges the structural change by hand.",
+    "seed": "Given once, then theirs. Never overwritten.",
+    "setup": "First-run scaffolding the user is told to delete once they're set up. Shipped, then never offered again.",
+    "structure": "A folder. Offered, never forced.",
+    "system": "Blueprint owns it. Updated in place unless the user edited it, in which case they're asked."
+  },
+  "_what": "Every file this blueprint ships, and how much of it belongs to the blueprint versus to the person using it. Read by AIOS/scripts/blueprint-update.py. Generated \u2014 do not hand-edit; change the rules in AIOS/scripts/blueprint-manifest.py instead.",
+  "count": 71,
+  "files": {
+    ".gitignore": {
+      "bytes": 449,
+      "class": "seed",
+      "sha256": "59139e3b78528d7273de8cf92d6de7205c4ac7974caf60733e5893b32677f254"
+    },
+    ".obsidian/app.json": {
+      "bytes": 73,
+      "class": "seed",
+      "sha256": "993bd69d4680f54dcf186a7a117ce73848f6dca39616ecfd6e2e0148c8dbb701"
+    },
+    ".obsidian/core-plugins.json": {
+      "bytes": 698,
+      "class": "seed",
+      "sha256": "c6e674ba2a037e2621a4fa5c294f13b72ed56ad84dba3766b89124648806e2cd"
+    },
+    ".obsidian/daily-notes.json": {
+      "bytes": 76,
+      "class": "seed",
+      "sha256": "3f2ca41bdb93ebc8c3f82721ee265ef1fb377dcee33b1113d6009df657e93c68"
+    },
+    ".obsidian/templates.json": {
+      "bytes": 33,
+      "class": "seed",
+      "sha256": "30b4d41c9791acdd3b4ab43c9c9bcbf1fde3e3b69f4b113b87ea0e2e0720e5b3"
+    },
+    "AIOS/config/blueprint-allowed.txt": {
+      "bytes": 1271,
+      "class": "seed",
+      "sha256": "dbb8187fe92072f9800858dd1a40d282868d00805ede69567824dd75c0fd6aa7"
+    },
+    "AIOS/how-to-use-this.md": {
+      "bytes": 9405,
+      "class": "brain",
+      "sha256": "f85ebcdedefa494b3e4afabcfdb7e499506237e83d8cb173d81f6a301d6ce267"
+    },
+    "AIOS/me.md": {
+      "bytes": 7419,
+      "class": "brain",
+      "sha256": "99b914d1658a00ed04687aebb6143c69fa6029480030c7f56504203df1ed3b5a"
+    },
+    "AIOS/reference/blueprint-changes.md": {
+      "bytes": 3522,
+      "class": "system",
+      "sha256": "75db1093c899b047e4c9f1e211b0aca45d39d07c82294191401540574b520cb2"
+    },
+    "AIOS/reference/canon.md": {
+      "bytes": 1195,
+      "class": "system",
+      "sha256": "fbebc3402cebae5a6f25f774d4efaa34be11cbc3e6e9509b428b0a72657fa20e"
+    },
+    "AIOS/scripts/backup-cowork.py": {
+      "bytes": 13954,
+      "class": "system",
+      "sha256": "8708ae295e93ef7e7ca3a1fd0305f2e4d551dbc00b9c6ccc78efc99fcb3101ce"
+    },
+    "AIOS/scripts/blueprint-manifest.py": {
+      "bytes": 7303,
+      "class": "system",
+      "sha256": "1b33a054d98e5f9f4977f750a8011def0aa61a659586829fd53fcf8e6d046ebe"
+    },
+    "AIOS/scripts/blueprint-release.py": {
+      "bytes": 12030,
+      "class": "system",
+      "sha256": "9b038760cfde4b477a26d5e68ebeb25d9a39c49e9fc76c1fb98a27438ed19545"
+    },
+    "AIOS/scripts/blueprint-update.py": {
+      "bytes": 35316,
+      "class": "system",
+      "sha256": "a809dd613dd045c600ba889903507008e990a3c3f3f49bee1f6b7d8e055a0ae1"
+    },
+    "AIOS/scripts/canon-check.py": {
+      "bytes": 8579,
+      "class": "system",
+      "sha256": "8da09cbb5401da75e07b6a825d9107b14b6d36922d4cabd6165296332eb29e8e"
+    },
+    "AIOS/scripts/changelog-check.py": {
+      "bytes": 6654,
+      "class": "system",
+      "sha256": "24f869943c338b5beee9ebcac6828c47ea9e0c9a7672dbad85815e3bc436d78c"
+    },
+    "AIOS/scripts/context-budget.py": {
+      "bytes": 6765,
+      "class": "system",
+      "sha256": "5500090e9b8d6ede42ff0a7e4cfd0a75fc492ac33f04c9a91b964269a92937a3"
+    },
+    "AIOS/scripts/logchange.py": {
+      "bytes": 7238,
+      "class": "system",
+      "sha256": "3a69e92289ebefa0554986ac98b83d548240ae9b6c6cf348d49350dc7e535d82"
+    },
+    "AIOS/scripts/next-actions.py": {
+      "bytes": 6128,
+      "class": "system",
+      "sha256": "92c62a653030d5aebd1fb8594247d9e44c53d89e5f0020cf96702801e2481c81"
+    },
+    "AIOS/scripts/scheduler.py": {
+      "bytes": 12692,
+      "class": "system",
+      "sha256": "2bb9f4ed75748134ac1587d03f5c6f99e4a25bd10c193dea941a1cf7115c1f49"
+    },
+    "AIOS/scripts/scriptlog.py": {
+      "bytes": 3550,
+      "class": "system",
+      "sha256": "2a3737deab50e161ceb0b2d9db19b398135c2dc3e554430e52c0a41467014511"
+    },
+    "AIOS/scripts/setup-check.py": {
+      "bytes": 10296,
+      "class": "system",
+      "sha256": "8ab31c370a51fca6f913413f44f9dc0b507ad8cd0ffc21aedd346fdf450c0241"
+    },
+    "AIOS/scripts/setup.py": {
+      "bytes": 8386,
+      "class": "system",
+      "sha256": "8c1a0a397387cfb8af1ae0113e3ae0461d0736d0d9ccde88aacccd0460158ed7"
+    },
+    "AIOS/scripts/vault-check.py": {
+      "bytes": 11181,
+      "class": "system",
+      "sha256": "3d015b9ad6c1828da49f40f94beddd759c8a68091e3929c236e82f4930a181ae"
+    },
+    "AIOS/scripts/vault-snapshot.py": {
+      "bytes": 12590,
+      "class": "system",
+      "sha256": "d141e56b46a1c4ae4ded38604f2f06716e1d3c0d4536a1e1d223c7ce4a95228f"
+    },
+    "AIOS/setup-questions.md": {
+      "bytes": 7418,
+      "class": "setup",
+      "sha256": "7a6ba6783a03bd07aa56e7530d715c20f69f5ebc4ab854437ec4ef223334c134"
+    },
+    "AIOS/skill-map.md": {
+      "bytes": 16564,
+      "class": "brain",
+      "sha256": "5bf77583f9a48b7ef859782ffccb36277d994c98edd44dcc469972ee3dbf03ba"
+    },
+    "AIOS/skills/README.md": {
+      "bytes": 4519,
+      "class": "system",
+      "sha256": "950f7b043ff67363209f9ac06a67d60606bd0878ef99d2b0f559a0f4b47950ae"
+    },
+    "AIOS/skills/auto-capture/SKILL.md": {
+      "bytes": 18136,
+      "class": "system",
+      "sha256": "ea38caf4fbedcede2c2e93a9911e03c2e9fcf5df3416c7cce72d6cfdbf54aad0"
+    },
+    "AIOS/skills/daily-brief/SKILL.md": {
+      "bytes": 2697,
+      "class": "system",
+      "sha256": "83bff144c155efa57bbf3e5b065e7435f1f77bf580f27697fd05ff1f5e6a7fa8"
+    },
+    "AIOS/skills/no-bullshit/SKILL.md": {
+      "bytes": 6680,
+      "class": "system",
+      "sha256": "847feb2f3a4dbfcb847249715fa94c45b6258b78d75dfb6f70880025d7c0d39b"
+    },
+    "AIOS/skills/setup-vault/SKILL.md": {
+      "bytes": 13408,
+      "class": "setup",
+      "sha256": "19e96f83d1a7b61d908baba0ef1b14f6bcdf54a25a76f74b4e03be3dbed649aa"
+    },
+    "AIOS/skills/update-vault/SKILL.md": {
+      "bytes": 8178,
+      "class": "system",
+      "sha256": "1bbbf371829eeaaf67d6af6c17c8d5ec7fc643e248339eb5b7fd1b8933ee0175"
+    },
+    "AIOS/skills/vault-first/SKILL.md": {
+      "bytes": 8747,
+      "class": "system",
+      "sha256": "b55347095282548e8e028d3f8b9bafb19279edbdc173d455a89705c08c760e7e"
+    },
+    "AIOS/skills/vault-librarian/SKILL.md": {
+      "bytes": 5177,
+      "class": "system",
+      "sha256": "a209a4741c02822ec4c93e6daf8d90a1782335f7206ea5729c364aac923672df"
+    },
+    "AIOS/templates/daily-note.md": {
+      "bytes": 709,
+      "class": "system",
+      "sha256": "b06fa94d6605be43a26c29ddfa5d3b591623913228a395a142da4e511614fa05"
+    },
+    "AIOS/templates/learn-note.md": {
+      "bytes": 633,
+      "class": "system",
+      "sha256": "5c006b95852d3980a4f82ee5fca7c78a959f5cb8c796865bedd5174301b241ce"
+    },
+    "AIOS/templates/media-note.md": {
+      "bytes": 404,
+      "class": "system",
+      "sha256": "0bf985a6cfa3d20a4e6bcdcc9e96a4ad0f2f7aa795aaa9f7308732ce3914db11"
+    },
+    "AIOS/templates/project.md": {
+      "bytes": 571,
+      "class": "system",
+      "sha256": "9f1766829aea7f79949529cc584fe3c1f9acd9a901e0a3d8b4ffbf4e1c39a626"
+    },
+    "AIOS/templates/weekly-review.md": {
+      "bytes": 517,
+      "class": "system",
+      "sha256": "7c91ff6b47f4b08bf77b3a590e7f02bb1fa6664017172964eb6b747de6b87f7c"
+    },
+    "AIOS/vault-map.md": {
+      "bytes": 14054,
+      "class": "brain",
+      "sha256": "cbd98475a15d950d828b08f0b9873b49d44601fa6bd874e44b236fd6bb587ab9"
+    },
+    "Atlas/About Me/About Me.md": {
+      "bytes": 1383,
+      "class": "seed",
+      "sha256": "bfcfe043eec7d2a1558e3c2ce60eea983b8138d6d8f9cd1218387dfb9773695c"
+    },
+    "Atlas/About Me/EXAMPLE How I learn.md": {
+      "bytes": 1437,
+      "class": "setup",
+      "sha256": "d0b29614c94d8dd29a75b2365e62d2ddcdfe8d324541c406fda66a31c092fd81"
+    },
+    "Atlas/Atlas.md": {
+      "bytes": 1078,
+      "class": "seed",
+      "sha256": "d5f4096075485ac0a98220a4d069d72f06323064013566b70089489dbf727b02"
+    },
+    "Atlas/Clippings/.gitkeep": {
+      "bytes": 0,
+      "class": "structure",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "Atlas/Clippings/Clippings.md": {
+      "bytes": 382,
+      "class": "seed",
+      "sha256": "c1d221138c4aa890b37c1596d231fd453722b476c019820383628b89d7614bf7"
+    },
+    "Atlas/Knowledge/.gitkeep": {
+      "bytes": 0,
+      "class": "structure",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "Atlas/Knowledge/Knowledge.md": {
+      "bytes": 773,
+      "class": "seed",
+      "sha256": "dc5d1e913618b823d7b212e26856f1abaffa1d3393fc5986579251ad9404397e"
+    },
+    "Atlas/Media/EXAMPLE Dune.md": {
+      "bytes": 1498,
+      "class": "setup",
+      "sha256": "913cddd665af31e1ff7eb0838ba48699122b15f63d6a921e91361c001bae41a2"
+    },
+    "Atlas/Media/Media.md": {
+      "bytes": 881,
+      "class": "seed",
+      "sha256": "d9c7db113451276885568e6ee4da1d3da685cda4bf33f14d4d442429dad827e2"
+    },
+    "Atlas/Radar.md": {
+      "bytes": 627,
+      "class": "seed",
+      "sha256": "773a625ea884eca4b1ecacfd791d03907fc6281d848b72163f55ef00c63156b8"
+    },
+    "Atlas/Reference/Reference.md": {
+      "bytes": 665,
+      "class": "seed",
+      "sha256": "f1693d599a81f05c21c0b4d1ef9139ad1ae0472efb05296ead7f3e3e84a9ec0d"
+    },
+    "Atlas/Worlds/.gitkeep": {
+      "bytes": 0,
+      "class": "structure",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "Atlas/Worlds/Worlds.md": {
+      "bytes": 494,
+      "class": "seed",
+      "sha256": "5aca32e70460f62b4d92d0de86b6214d2c079fc7d54adff81f379ea220356f77"
+    },
+    "CLAUDE.md": {
+      "bytes": 2444,
+      "class": "brain",
+      "sha256": "760a1d278340355daf0557a04ab7481b4563d985f60079e1990f78bb42adada5"
+    },
+    "Calendar/Calendar.md": {
+      "bytes": 833,
+      "class": "seed",
+      "sha256": "e79c55127358ad19fe350f27c2d4685de17f83afcfb9722003de77f6f76e6c10"
+    },
+    "Calendar/Cooldowns.md": {
+      "bytes": 733,
+      "class": "seed",
+      "sha256": "7a5b5f4d22f44cdb5091de21caf2a3b90c0d4107412201ac769bd5da336de735"
+    },
+    "Calendar/Daily/.gitkeep": {
+      "bytes": 0,
+      "class": "structure",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "Calendar/Daily/EXAMPLE daily note.md": {
+      "bytes": 2036,
+      "class": "setup",
+      "sha256": "191217751dbc611f75df0e08b299e3b6894c245c2442d14d18f0d45a00e61e0f"
+    },
+    "Calendar/Weekly/.gitkeep": {
+      "bytes": 0,
+      "class": "structure",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "Calendar/Weekly/Weekly.md": {
+      "bytes": 674,
+      "class": "seed",
+      "sha256": "250c61a6543eb4f9d85feb1b0679ecace18a481c60eb2ddf56ee788b58e0309e"
+    },
+    "Efforts/EXAMPLE Bike Restoration.md": {
+      "bytes": 1579,
+      "class": "setup",
+      "sha256": "d645222fdd12c2e788273f91ade30377757bba83423eefd5358b17fc3db3c4c8"
+    },
+    "Efforts/Efforts.md": {
+      "bytes": 1249,
+      "class": "seed",
+      "sha256": "1df16dcd225acacbe155c665fe39ca02c361cfaea64d4c861a3efffe2df2663f"
+    },
+    "Efforts/Next Actions.md": {
+      "bytes": 495,
+      "class": "seed",
+      "sha256": "a66a518091ffd33b7a52258e0a8c745158a18335dc4539cc12dcd2e89450403b"
+    },
+    "Home.md": {
+      "bytes": 3449,
+      "class": "seed",
+      "sha256": "48985e7ba77e03b856df49300efdf3f46e805102ef597d5b78f3b8435849d3c5"
+    },
+    "Inbox/Files/.gitkeep": {
+      "bytes": 0,
+      "class": "structure",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "Inbox/Inbox.md": {
+      "bytes": 753,
+      "class": "seed",
+      "sha256": "79c77431e3742dc1af36e9fa49b9b19109e7ad30f1769984948e29a69312790c"
+    },
+    "Inbox/Screenshots/.gitkeep": {
+      "bytes": 0,
+      "class": "structure",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "LICENSE": {
+      "bytes": 1070,
+      "class": "system",
+      "sha256": "1b978e2b803914fd9621599e13f3b6f2b7c0935af622d0c6a0f5ec638d03bd16"
+    },
+    "README-START-HERE.md": {
+      "bytes": 8770,
+      "class": "setup",
+      "sha256": "7c9f3d358c3a270eb7b87f3e3687b09803531128102f049850cb94d38f7a072f"
+    },
+    "UPDATE-MY-VAULT.md": {
+      "bytes": 6053,
+      "class": "system",
+      "sha256": "3591b98a304aeabc4b7887ddf637a9a1980033675f26b95c9dc9fc9d555eed00"
+    }
+  },
+  "generated": "2026-08-18T02:23:37"
+}
