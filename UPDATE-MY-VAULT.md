@@ -59,14 +59,28 @@ for f in ("AIOS/scripts/blueprint-update.py", "AIOS/scripts/blueprint-manifest.p
 PY
 ```
 
-If neither works — no network from the shell, no way to fetch a URL — tell me,
-and I'll download the repo as a ZIP myself and point you at the folder. The
-updater accepts `--from /path/to/that/folder` and works entirely offline that
-way.
+If neither works, tell me which of these it was, because they mean different
+things:
 
-**Step 3 — install the skill.** Get `AIOS/skills/update-vault/SKILL.md` from the
-same repo and save it into my vault at that path. Then make it actually active
-for the tool I'm using:
+- **404 / "not found"** — the file isn't in the repo. That's the blueprint's
+  problem, not mine and not my vault's. Say so plainly and stop; there is
+  nothing to install yet.
+- **No network from your shell, or you can't fetch URLs at all** — then I'll
+  download the repo as a ZIP myself and point you at the unpacked folder. The
+  updater takes `--from /path/to/that/folder` and works entirely offline that
+  way.
+
+Don't paper over either one by writing the file from memory. A hand-typed
+copy of a script that's supposed to update itself is worse than not having it.
+
+**Step 3 — install the skill.** Fetch this and save it to my vault at the same
+path (`AIOS/skills/update-vault/SKILL.md`):
+
+```
+https://raw.githubusercontent.com/eduardkuncek-crypto/Vault-Blueprint/main/AIOS/skills/update-vault/SKILL.md
+```
+
+Then make it actually active for the tool I'm using:
 
 - **Claude Code** — copy the folder to `.claude/skills/update-vault/`. Done, it
   loads itself from now on.
@@ -76,8 +90,15 @@ for the tool I'm using:
   Don't tell me a skill is installed if I haven't clicked anything.
 
 **Step 4 — make it work even with no skill at all.** This is the part that
-makes it permanent. Add this block to my `CLAUDE.md` at the vault root, near
-the end, keeping everything already in that file exactly as it is:
+makes it permanent.
+
+**First check whether my `CLAUDE.md` already contains the words "Updating from
+the Vault Blueprint". If it does, skip this whole step** — a newer copy of the
+blueprint ships with it already, and adding it twice gives every future session
+the same instructions twice.
+
+Otherwise, add this block to my `CLAUDE.md` at the vault root, near the end,
+keeping everything already in that file exactly as it is:
 
 ```markdown
 ## Updating from the Vault Blueprint

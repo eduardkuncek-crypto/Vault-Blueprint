@@ -199,3 +199,25 @@ fatal: unable to auto-detect email address (got 'charming-ecstatic-albattani@cla
          git config --global user.name  'Your Name'
          git config --global user.email 'you@example.com'
 ```
+
+### 2026-08-18 02:35:06 — OK (1.42s)
+
+args: `['--check']`
+
+```text
+Blueprint release check — /sessions/charming-ecstatic-albattani/mnt/Vault Blueprint
+
+[ ok ] 15 scripts compile
+[ ok ] manifest is current
+[ ok ] 1 change entries in blueprint-changes.md
+[ ok ] every changed system file is described in plain English
+       5 documented exception(s) — read them:
+         LICENSE  ::  \beduard\b
+         LICENSE  ::  kuncek
+         *  ::  eduardkuncek-crypto
+         *  ::  github\.com/eduardkuncek
+         AIOS/scripts/blueprint-release.py  ::  \bai os\b
+[ ok ] denylist scan clean
+
+Clean. Safe to push.
+```

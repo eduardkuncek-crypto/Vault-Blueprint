@@ -186,3 +186,26 @@ args: `['--check']`
 ```text
 Manifest is current — 71 files.
 ```
+
+### 2026-08-18 02:35:05 — OK (0.31s)
+
+args: `[]`
+
+```text
+Wrote AIOS/config/blueprint-manifest.json — 72 files: 5 brain, 22 seed, 7 setup, 7 structure, 31 system
+
+brain files (a script will never write these):
+  AIOS/how-to-use-this.md
+  AIOS/me.md
+  AIOS/skill-map.md
+  AIOS/vault-map.md
+  CLAUDE.md
+```
+
+### 2026-08-18 02:35:06 — OK (0.23s)
+
+args: `['--check']`
+
+```text
+Manifest is current — 72 files.
+```

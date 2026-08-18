@@ -7,7 +7,7 @@
     "system": "Blueprint owns it. Updated in place unless the user edited it, in which case they're asked."
   },
   "_what": "Every file this blueprint ships, and how much of it belongs to the blueprint versus to the person using it. Read by AIOS/scripts/blueprint-update.py. Generated \u2014 do not hand-edit; change the rules in AIOS/scripts/blueprint-manifest.py instead.",
-  "count": 71,
+  "count": 72,
   "files": {
     ".gitignore": {
       "bytes": 449,
@@ -359,11 +359,16 @@
       "class": "setup",
       "sha256": "7c9f3d358c3a270eb7b87f3e3687b09803531128102f049850cb94d38f7a072f"
     },
+    "README.md": {
+      "bytes": 149,
+      "class": "seed",
+      "sha256": "d0da5d13d51bc6a892fb9802cbeecad64b61f72afe860e5414cca42c90ed7e7a"
+    },
     "UPDATE-MY-VAULT.md": {
-      "bytes": 6053,
+      "bytes": 6865,
       "class": "system",
-      "sha256": "3591b98a304aeabc4b7887ddf637a9a1980033675f26b95c9dc9fc9d555eed00"
+      "sha256": "6741fa9e7f0219b3e79f7c11de2c8011effa7e703f8a88af53bde3e10f54250a"
     }
   },
-  "generated": "2026-08-18T02:23:37"
+  "generated": "2026-08-18T02:35:05"
 }
