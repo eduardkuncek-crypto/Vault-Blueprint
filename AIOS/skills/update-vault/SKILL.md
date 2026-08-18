@@ -15,6 +15,25 @@ user picks.
 > skill is negotiable; that isn't. If you are ever unsure whether a file is
 > theirs, treat it as theirs and ask.
 
+> [!important] Take the slow path. Every time.
+> This skill is allowed to be expensive. Reading three files carefully, working
+> out what a change is *for*, and hand-writing the result into somebody's
+> customised vault is the correct amount of effort — not a fallback for when
+> something goes wrong.
+>
+> **A choice offered to the user is usually a merge you didn't do.** "Keep
+> yours or take the blueprint's?" is the lazy version of "I read both and
+> combined them." Only ask when the two genuinely conflict in intent — when
+> the blueprint wants X and they have deliberately chosen not-X. A blueprint
+> change and a user edit that touch different parts of the same file are not
+> a conflict; they're two things that both belong in the file, and doing that
+> work is the job.
+>
+> Same for a change that implies work beyond copying a file. If a new folder
+> needs an index note, a map row and a script that reads it, **do all of it**.
+> "Applied the file, you may want to update your map" is not applying the
+> change, it's describing it.
+
 ## Before anything else
 
 The script does the hard part. Do not diff files yourself, do not read the
@@ -84,6 +103,39 @@ what it applied, and updates the state file so next time it still knows which
 version they're on. Report what it printed. Don't paraphrase a success it
 didn't report.
 
+## 2.5. Conflicts: merge both sides, don't make them choose
+
+A `conflict` or `unknown` item means they edited a shipped file and the
+blueprint changed it too. **The default is not a question — it's a merge.**
+
+1. Read all three: their file, the blueprint's file, and the `diff` in the JSON.
+2. Work out what each side was *for*. Their edit usually has a reason sitting
+   right there in it — a raised timeout, an extra path, a commented-out line
+   with their name on it. The blueprint's change has a reason in
+   `blueprint-changes.md`.
+3. **Write a version that has both.** Take the blueprint's file as the base,
+   re-apply their edit on top, and keep their comment explaining why it's
+   there. Then say in one line what you did and what you kept.
+4. Only ask them if the two genuinely contradict — the blueprint deletes the
+   thing they customised, or changes the behaviour they deliberately changed
+   back. Then show both, explain the trade-off, and let them call it.
+
+Once merged, record it so it stops being offered:
+
+```bash
+python3 AIOS/scripts/blueprint-update.py --apply <id> --force-manual
+```
+
+For a `system` file that flag *does* write the file, so merge into their copy
+**first**, then run it only to update the record — or simpler, write your
+merged version to the file yourself and then run it to re-stamp the hash.
+
+> [!warning] `unknown` means you don't know, so don't guess
+> `unknown` is "your copy differs and there's no record of which version you
+> started from". That's often just an older blueprint, not an edit. Read the
+> diff before assuming they customised anything — a "merge" that preserves a
+> difference that was never theirs is how stale code becomes permanent.
+
 ## 3. Merge the brain files by hand — never with the script
 
 `CLAUDE.md`, `AIOS/me.md`, `AIOS/vault-map.md`, `AIOS/skill-map.md` and
@@ -104,6 +156,17 @@ So for anything the script marked `"manual": true` on one of those files:
    new index note needs writing, a script needs a row in a table — **do that
    too, in the same turn.** The point is that the change actually works
    afterwards, not that a line got added to a map.
+
+   Concretely, "the blueprint added `Atlas/Worlds/`" is not one edit, it's
+   five: create the folder, write its index note in the style of their other
+   index notes, add the row to *their* `vault-map.md` phrased the way they
+   phrase rows, add the status vocabulary to the conventions table, and add
+   the tag to their tag scheme. Ship it working or don't ship it.
+
+5. **Then check it actually works.** If the change added a script, run it. If
+   it added a folder a script reads, run that script. If it changed a rule in
+   `vault-map.md`, run `vault-check.py` to confirm nothing now contradicts it.
+   Report what you ran, not what you intended.
 
 Then record that they took it, so it stops being offered:
 

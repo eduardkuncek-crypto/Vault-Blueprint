@@ -170,9 +170,9 @@
       "sha256": "19e96f83d1a7b61d908baba0ef1b14f6bcdf54a25a76f74b4e03be3dbed649aa"
     },
     "AIOS/skills/update-vault/SKILL.md": {
-      "bytes": 8178,
+      "bytes": 11589,
       "class": "system",
-      "sha256": "1bbbf371829eeaaf67d6af6c17c8d5ec7fc643e248339eb5b7fd1b8933ee0175"
+      "sha256": "43070d10de4a013591c73e9c845430d9f29c4c80d4d7f6d9e8d7a35209c1a864"
     },
     "AIOS/skills/vault-first/SKILL.md": {
       "bytes": 8747,
@@ -370,5 +370,5 @@
       "sha256": "6741fa9e7f0219b3e79f7c11de2c8011effa7e703f8a88af53bde3e10f54250a"
     }
   },
-  "generated": "2026-08-18T02:35:05"
+  "generated": "2026-08-18T02:46:14"
 }
