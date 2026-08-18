@@ -7,7 +7,7 @@
     "system": "Blueprint owns it. Updated in place unless the user edited it, in which case they're asked."
   },
   "_what": "Every file this blueprint ships, and how much of it belongs to the blueprint versus to the person using it. Read by AIOS/scripts/blueprint-update.py. Generated \u2014 do not hand-edit; change the rules in AIOS/scripts/blueprint-manifest.py instead.",
-  "count": 72,
+  "count": 73,
   "files": {
     ".gitignore": {
       "bytes": 449,
@@ -15,23 +15,28 @@
       "sha256": "59139e3b78528d7273de8cf92d6de7205c4ac7974caf60733e5893b32677f254"
     },
     ".obsidian/app.json": {
-      "bytes": 73,
-      "class": "seed",
-      "sha256": "993bd69d4680f54dcf186a7a117ce73848f6dca39616ecfd6e2e0148c8dbb701"
+      "bytes": 72,
+      "class": "setup",
+      "sha256": "9f8a83f4f1baebfba7ead74d12376c7bc347bd1a01ac208ebde86745931ea141"
+    },
+    ".obsidian/appearance.json": {
+      "bytes": 2,
+      "class": "setup",
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
     },
     ".obsidian/core-plugins.json": {
-      "bytes": 698,
-      "class": "seed",
-      "sha256": "c6e674ba2a037e2621a4fa5c294f13b72ed56ad84dba3766b89124648806e2cd"
+      "bytes": 697,
+      "class": "setup",
+      "sha256": "6accf63ea9e47cabaee493e20473eb7ead8fb97324120c5b3d44c90f844f9cfe"
     },
     ".obsidian/daily-notes.json": {
       "bytes": 76,
-      "class": "seed",
+      "class": "setup",
       "sha256": "3f2ca41bdb93ebc8c3f82721ee265ef1fb377dcee33b1113d6009df657e93c68"
     },
     ".obsidian/templates.json": {
       "bytes": 33,
-      "class": "seed",
+      "class": "setup",
       "sha256": "30b4d41c9791acdd3b4ab43c9c9bcbf1fde3e3b69f4b113b87ea0e2e0720e5b3"
     },
     "AIOS/config/blueprint-allowed.txt": {
@@ -65,9 +70,9 @@
       "sha256": "8708ae295e93ef7e7ca3a1fd0305f2e4d551dbc00b9c6ccc78efc99fcb3101ce"
     },
     "AIOS/scripts/blueprint-manifest.py": {
-      "bytes": 7303,
+      "bytes": 7740,
       "class": "system",
-      "sha256": "1b33a054d98e5f9f4977f750a8011def0aa61a659586829fd53fcf8e6d046ebe"
+      "sha256": "c834e633042c852a1cd09b832ae27d49a8aa27010e7cacbadf4b07da0ca99068"
     },
     "AIOS/scripts/blueprint-release.py": {
       "bytes": 12030,
@@ -370,5 +375,5 @@
       "sha256": "6741fa9e7f0219b3e79f7c11de2c8011effa7e703f8a88af53bde3e10f54250a"
     }
   },
-  "generated": "2026-08-18T02:46:14"
+  "generated": "2026-08-18T02:59:11"
 }

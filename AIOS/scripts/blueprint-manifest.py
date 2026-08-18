@@ -81,7 +81,13 @@ RULES = [
     ("AIOS/skills/", "system"),
     ("AIOS/templates/", "system"),
     ("AIOS/reference/", "system"),
-    (".obsidian/", "seed"),
+    # Their editor settings — theme, enabled plugins, window state. Shipped
+    # once as sensible defaults, then permanently theirs. These files get
+    # rewritten by Obsidian just from opening the vault, so treating them as
+    # updatable means every user is repeatedly asked whether they want the
+    # blueprint author's colour scheme. Nobody wants that, and it's noise
+    # sitting on top of the changes that actually matter.
+    (".obsidian/", "setup"),
 ]
 
 
