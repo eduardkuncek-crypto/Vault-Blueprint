@@ -4745,3 +4745,26 @@ OK — Everything committed and pushed.
 
   written to       AIOS/generated/git-status.md
 ```
+
+### 2026-08-27 17:40:03 — OK (0.07s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      0f5623f vault snapshot: 2026-08-27 17:40:03
+  uncommitted      0 file(s)
+  unpushed         1
+  committed now    1 file(s)
+
+  NOTE  git push failed: ssh: Could not resolve hostname github.com: Name or service not known
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.  ← the SSH key on this machine isn't on your GitHub account yet.
+
+  written to       AIOS/generated/git-status.md
+```
