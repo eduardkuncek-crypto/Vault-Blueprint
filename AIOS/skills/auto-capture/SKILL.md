@@ -1,6 +1,6 @@
 ---
 name: "auto-capture"
-description: "Capture EVERYTHING the user says about themselves and their life into their Obsidian vault, as it comes up — no filtering, no judgement about what matters. Decisions, project state, grades, specs, prices, family, opinions, tastes, media and characters they liked, game state from screenshots, plans, complaints, things they want. If a fact has no home, create one. EVERY write is then logged as one timestamped line in today's daily note under `## Changes`, via AIOS/scripts/logchange.py — the daily note is the receipt, the subject note is the content. Never claim something was saved before the write actually happened. Also mirrors any created or changed skill into AIOS/skills/. One note per subject, facts not transcripts. Use continuously in every session in the vault."
+description: "Capture EVERYTHING the user says about themselves and their life into their Obsidian vault, as it comes up — no filtering, no judgement about what matters. Decisions, project state, grades, specs, prices, family, opinions, tastes, media and characters they liked, game state from screenshots, plans, complaints, things they want. If a fact has no home, create one. EVERY write is then logged as one timestamped line in today's daily note under `## Changes`, via AIOS/scripts/logchange.py — the daily note is the receipt, the subject note is the content. AND every corrected fact is registered in AIOS/reference/canon.md and checked with canon-check.py, so the correction reaches every note that repeats it instead of only the one you edited. Never claim something was saved before the write actually happened. Also mirrors any created or changed skill into AIOS/skills/. One note per subject, facts not transcripts. Use continuously in every session in the vault."
 ---
 
 # Auto Capture
@@ -61,7 +61,8 @@ The escalation, in order:
    give it an index note named after the folder, add it to `Atlas/Atlas.md` and
    to `AIOS/vault-map.md`. Then put the note in it.
 4. **Only if it's genuinely a one-off with no subject at all** — a mood, a thing
-   that happened once — put it in today's daily log under `## Log`.
+   that happened once — put it in today's `## Diary` via
+   `python3 AIOS/scripts/diary.py "..."`.
 
 A three-line note with a link back to its index beats a fact appended to
 something unrelated, and beats a fact not saved at all. **Small notes are the
@@ -132,6 +133,53 @@ in a batch at the end — sessions have no clean end.
 
 ---
 
+## RULE FOUR: a corrected fact gets registered, or it doesn't stick
+
+A correction that only lands in the one note you happened to be editing,
+while every other note keeps repeating the old version, is not actually
+fixed — it's fixed in exactly one place, and the next session that opens a
+different note believes the old version. `vault-check.py` cannot catch
+this: every link still works, every file is still valid Markdown. The vault
+is just confidently wrong.
+
+### What to do, every time you correct a fact
+
+1. Fix it in the note that owns it.
+2. **Ask: does this fact appear anywhere else?** If yes — and it usually
+   does — add a row to `AIOS/reference/canon.md`:
+
+   `| # | Fact | The truth | Owner note | Stale wording | Allowed in | Since |`
+
+   Stale wording is **semicolon-separated plain text**, case-insensitive.
+   Never comma-separated: a comma inside a phrase splits it, and the
+   fragment left over can match half the vault.
+
+3. Run it, and fix every file it names:
+
+   ```bash
+   python3 <vault>/AIOS/scripts/canon-check.py
+   ```
+
+4. Re-run until it says `CLEAN`, then `logchange.py` every file you touched.
+
+**Correcting a fact and registering it are one action, not two.** Do only
+step 1 and the correction has a shelf life of about a day.
+
+### When not to add a row
+
+If the fact genuinely lives in exactly one note and nothing references it,
+skip it. The table is for facts that are *repeated*. Padding it with
+one-offs makes it long enough that nobody reads it.
+
+### Reading direction, not just writing
+
+`AIOS/reference/canon.md` is also the tie-breaker. **If two notes disagree
+about a fact, the owner note named in the canon table wins** — say so, and
+fix the other one in the same turn rather than reporting the contradiction
+and moving on.
+
+---
+
 ## RULE ZERO: write first, then speak
 
 **Never write a sentence claiming something was saved until the tool call that
@@ -145,8 +193,10 @@ They trust the vault. Do not put a lie in it.
 
 1. Edit / Write the file.
 2. See the tool result succeed.
-3. **Run `logchange.py` for that write.** See Rule Three.
-4. *Then* say so, naming the file — *"Added your grades to `School.md`."*
+3. **If that write corrected a fact that appears elsewhere, register it in
+   `AIOS/reference/canon.md` and run `canon-check.py`.** See Rule Four.
+4. **Run `logchange.py` for that write.** See Rule Three.
+5. *Then* say so, naming the file — *"Added your grades to `School.md`."*
 
 **Specifically forbidden:**
 
@@ -157,7 +207,7 @@ They trust the vault. Do not put a lie in it.
 - Describing the shape of a note you have not created.
 - Claiming a change was logged when `logchange.py` didn't run or exited non-zero.
 
-**Before ending any turn, check three things:**
+**Before ending any turn, check four things:**
 
 1. Did I state or imply anything was written? Did that write actually run and
    succeed *in this turn*? If not, do it now, before sending.
@@ -165,6 +215,9 @@ They trust the vault. Do not put a lie in it.
    saved?** Scan their message again. Any fact, however small. If yes — save it now.
 3. **Does every file I changed this turn have a line in today's `## Changes`?**
    Count them. Writes and log lines should match one to one.
+4. **Did I correct a fact this turn?** Then is it in `AIOS/reference/canon.md`,
+   and does `canon-check.py` come back clean? An unregistered correction gets
+   quietly undone by the next session that happens to read a different note.
 
 **If they correct a fact or give a new one mid-conversation, the vault edit
 happens in that same turn**, before the reply is composed.
@@ -217,21 +270,24 @@ job.
 | Anything about a project — decision, status change, a number with its source, a task they committed to | The existing note in `Efforts/` (decisions log, `## Status`, `## Next action`, `- [ ]`) |
 | A new project | **Its own note** in `Efforts/`, from the project template, plus a row in `Efforts/Efforts.md` |
 | A person who keeps coming up and isn't private | **Their own note.** Make `Atlas/People/` if it doesn't exist yet, with an index. Nothing from `Privat/`. |
-| Something that happened on a given day, with no lasting subject of its own | `Calendar/Daily/YYYY-MM-DD.md` under `## Log`, timestamped `HH:MM`, appended |
+| Something that happened on a given day, with no lasting subject of its own | `Calendar/Daily/YYYY-MM-DD.md` under `## Diary` — write it with `python3 AIOS/scripts/diary.py "..."`, never by hand |
+| A trip, appointment, exam week — anything dated that isn't a project | `python3 AIOS/scripts/event.py "<Title>" --start YYYY-MM-DD [--end/--open] --where "..."` → `Calendar/Events/YYYY/<Title>.md`, which links itself into every daily note it covers |
 | A contradiction, an unclear answer, or something worth confirming later | A row in `Atlas/About Me/Things to confirm.md` |
 | A durable fact that changes how an AI works with them: a career shift, a standing preference, a skill they're now strong in | `AIOS/me.md` — conservative, and say so when you edit it |
+| **A fact you just corrected that appears in more than one note** | A row in `AIOS/reference/canon.md`, then `canon-check.py` — see Rule Four |
 | **Anything that fits none of the above** | **Make it a home.** See Rule Two. Do not skip it. |
 | **A skill was created or changed** | Mirror it to `AIOS/skills/` — see below |
 | **Every one of the above, without exception** | Plus one line in today's `## Changes` via `logchange.py` — see Rule Three |
 
 **A fact usually belongs in two places, not one:** its subject note (permanent,
-where anyone would look for it) *and* today's daily log (dated, so it's clear
+where anyone would look for it) *and* today's diary (dated, so it's clear
 when it became true). Grades, prices and specs all change — the dated entry is
 what makes the history readable later.
 
-> `## Log` and `## Changes` are different things and both exist in the daily note.
-> `## Log` is **theirs** — thoughts and events, written by the `log` routine.
-> `## Changes` is **yours** — an audit trail of vault writes. Don't mix them.
+> `## Diary` and `## Changes` are different things and both exist in the daily
+> note. `## Diary` is **theirs** — what actually happened, written by the
+> `diary` routine, plain lines with no timestamp. `## Changes` is **yours** —
+> an audit trail of vault writes. Don't mix them.
 
 ### Don't create a long catch-all file
 
@@ -339,6 +395,7 @@ that's the pruning mechanism, and it runs on *duplicates and errors*, never on
 - **Skip a fact because there's no obvious note for it.** Make one.
 - **Say something was saved when it wasn't.** See Rule Zero.
 - **Write a file without logging it to today's `## Changes`.** See Rule Three.
+- **Correct a fact without registering it in `AIOS/reference/canon.md`.** See Rule Four.
 - **Put the fact itself in `## Changes` instead of in a subject note.** The
   changelog is a receipt, not storage.
 - Promise to write something "later" instead of writing it now
@@ -349,4 +406,4 @@ that's the pruning mechanism, and it runs on *duplicates and errors*, never on
 - Invent a decision they didn't actually make. If ambiguous, ask in one line.
 - Delete or move existing notes without asking
 - Save a full transcript they didn't ask for
-- Touch `## Log` — that section is theirs, `## Changes` is yours
+- Touch `## Diary` by rewriting it — that section is theirs, `## Changes` is yours; append only, via `diary.py`

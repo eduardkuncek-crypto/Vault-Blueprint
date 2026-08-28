@@ -309,7 +309,14 @@ answers **which file**.
     for path, title, terms, _ in rows:
         stem = Path(path).stem
         t = ", ".join(dict.fromkeys(terms))[:220]
-        body.append(f"| [[{stem}\\|{title}]] · `{path}` | {t} |")
+        # Plain [[stem]] always resolves and never needs escaping. A `|` alias
+        # would need `\|` to survive as a table cell, but Obsidian doesn't
+        # treat a backslash-escaped pipe as the alias separator inside
+        # [[ ]] — it rendered literally, and broke vault-check.py's wikilink
+        # parser too. Show the real title alongside instead, only when it
+        # actually differs from the filename.
+        link = f"[[{stem}]]" if stem == title else f"[[{stem}]] ({title})"
+        body.append(f"| {link} · `{path}` | {t} |")
 
     tail = "\n\n## Notes in `Efforts/` with no route in vault-map.md\n\n"
     if missing:

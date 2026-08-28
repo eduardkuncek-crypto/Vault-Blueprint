@@ -85,11 +85,11 @@ suppress this warning just because it's awkward to say.
 
 ## §2. Get the skills active
 
-The six skills in `AIOS/skills/` (`auto-capture`, `vault-first`,
-`vault-librarian`, `no-bullshit`, `daily-brief`, and this one) are markdown
-files, not automatically-running code. How they become "active" genuinely
-depends on what's reading this file right now — do the right one, and tell
-the user which one you did.
+The seven skills in `AIOS/skills/` (`auto-capture`, `vault-first`,
+`vault-librarian`, `no-bullshit`, `daily-brief`, `update-vault`, and this one)
+are markdown files, not automatically-running code. How they become "active"
+genuinely depends on what's reading this file right now — do the right one,
+and tell the user which one you did.
 
 **If you can run shell commands against a real local filesystem** (Claude
 Code in a terminal, or Cowork running directly on the user's computer) —
@@ -107,7 +107,7 @@ for d in AIOS/skills/*/; do
 done
 ```
 
-Then verify it actually landed — list `.claude/skills/` and confirm all six
+Then verify it actually landed — list `.claude/skills/` and confirm all seven
 folders are there with a `SKILL.md` inside each, and say so with the actual
 count, not "done."
 
@@ -181,6 +181,12 @@ Rules while interviewing, same as any session in this vault:
 - **Never write to `Privat/`.**
 - **Never claim a write before it succeeded** — write, confirm, then say so,
   naming the file.
+- **Every note the routing table sends to `Atlas/About Me/` (or anywhere else
+  with a folder index) follows `vault-librarian`'s note-creation rules, not
+  just the routing table's destination path** — that means a row in the
+  folder's index note (`Atlas/About Me/About Me.md` etc.) and a link up to
+  it, same as any other note in the vault. A note that exists but isn't in
+  its index is only findable by luck; don't leave one behind mid-interview.
 
 Where answers go: follow the routing table at the bottom of
 `AIOS/setup-questions.md`. In short — `AIOS/me.md` gets the short summary

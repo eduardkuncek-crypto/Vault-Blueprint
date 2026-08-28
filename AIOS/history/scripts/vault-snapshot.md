@@ -5092,3 +5092,213 @@ OK — Everything committed and pushed.
 
   written to       AIOS/generated/git-status.md
 ```
+
+### 2026-08-27 23:00:04 — OK (3.57s)
+
+args: `[]`
+
+```text
+OK — Everything committed and pushed.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      579a440 vault snapshot: 2026-08-27 23:00:01
+  uncommitted      0 file(s)
+  unpushed         0
+  committed now    22 file(s)
+  pushed at        2026-08-27 23:00
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-27 23:10:01 — OK (0.05s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      579a440 vault snapshot: 2026-08-27 23:00:01
+  uncommitted      17 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '<vault>/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-27 23:20:01 — OK (0.04s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      579a440 vault snapshot: 2026-08-27 23:00:01
+  uncommitted      18 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-27 23:30:02 — OK (0.05s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      579a440 vault snapshot: 2026-08-27 23:00:01
+  uncommitted      21 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-27 23:40:01 — OK (0.05s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      579a440 vault snapshot: 2026-08-27 23:00:01
+  uncommitted      21 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 01:50:05 — OK (0.07s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      579a440 vault snapshot: 2026-08-27 23:00:01
+  uncommitted      21 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 02:00:01 — OK (0.06s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      579a440 vault snapshot: 2026-08-27 23:00:01
+  uncommitted      21 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 02:10:02 — OK (0.05s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      579a440 vault snapshot: 2026-08-27 23:00:01
+  uncommitted      21 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 02:20:03 — OK (0.05s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      579a440 vault snapshot: 2026-08-27 23:00:01
+  uncommitted      21 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```

@@ -105,7 +105,7 @@ def c_me_md():
 def c_skills():
     d = VAULT / "AIOS" / "skills"
     expected = {"auto-capture", "vault-first", "vault-librarian",
-               "no-bullshit", "daily-brief", "setup-vault"}
+               "no-bullshit", "daily-brief", "setup-vault", "update-vault"}
     if not d.is_dir():
         check("Skill source files", FAIL, "AIOS/skills/ is missing")
         return

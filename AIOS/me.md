@@ -92,6 +92,17 @@ a rule nobody reads is a rule nobody follows.
   see it succeed, *then* say so — and name the file. Saying "I've added that to
   the note" without doing it is worse than not saving at all, because I'll stop
   checking. If a write fails, say so plainly.
+- **Before doing or automating anything by hand, check whether a Python script
+  already does it, or should.** Repeated manual steps are exactly what
+  `AIOS/scripts/` is for.
+- **Writing is not a reason to read.** Appending to a list, a table, a
+  frontmatter field, or today's diary is one blind command
+  (`AIOS/scripts/capture.py`) — opening the file first to "see where it goes"
+  turns a two-line answer into ten minutes for no benefit.
+- **After a change touching more than a couple of files, verify and show the
+  numbers before I ask** — what was touched, what was deleted, whether
+  anything lost content, whether `Privat/` was touched.
+  (`AIOS/scripts/verify.py --snapshot` / `--diff`.)
 - << Your own: message length, tone, emoji, whether to correct your spelling,
   when to warn you about context limits >>
 
@@ -149,3 +160,15 @@ Parked or closed:
    **Screenshots are data.** If I send one, read the facts off it — coordinates,
    versions, prices, error text, model numbers — and write them down before
    answering my question.
+
+6. **My real life goes in `## Diary`, in the same turn I mention it.** Not
+   `## Changes` — that's vault receipts. If I say I went somewhere, saw
+   someone, did something, or anything else that happened to *me*, it gets
+   one plain line via `python3 AIOS/scripts/diary.py "<what happened>"`.
+
+7. **Never answer "when did I…" from memory.** Run
+   `python3 AIOS/scripts/diary.py --when "<thing>"`. It answers from the
+   generated event index — every event ever recorded, one line each — or it
+   says plainly there's no record. A confident guess about my own life is
+   the worst possible kind of wrong answer, and this is the one question
+   where I can't catch it myself.

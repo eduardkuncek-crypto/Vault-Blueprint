@@ -26,15 +26,16 @@ and `Privat/` for the part no AI touches.
 | Folder | What lives here | AI may write? |
 |---|---|---|
 | `Privat/` | The private half. Diary, people, anything you don't want an AI reading. | **NO — do not read or write** |
-| `AIOS/` | The AI operating system layer: identity, maps, templates, scripts, skill copies. | Yes |
-| `AIOS/templates/` | Note templates: daily, project, learn note, media note, weekly review. | Yes |
-| `AIOS/scripts/` | Small Python scripts that read the vault and report or regenerate. No dependencies, plain stdlib, cross-platform (Linux/macOS/Windows). Start with `setup.py` and `setup-check.py` — the rest are named after the routine that runs them (see `AIOS/skill-map.md`), and each has its own docstring. | Yes |
+| `AIOS/` | The AI operating system layer: identity, maps, templates, scripts, skill copies. Root holds the boot files (`me.md`, `character.md`, `vault-map.md`, `skill-map.md`) plus subfolders. | Yes |
+| `AIOS/templates/` | Note templates: daily, event, project, learn note, media note, weekly review. | Yes |
+| `AIOS/scripts/` | Small Python scripts that read the vault and report or regenerate. No dependencies, plain stdlib, cross-platform (Linux/macOS/Windows). Start with `setup.py` and `setup-check.py` — the rest are named after the routine that runs them (see `AIOS/skill-map.md`), and each has its own docstring. Full catalog: `AIOS/reference/setup.md`. | Yes |
 | `AIOS/skills/` | Plain-markdown master copies of every installed skill. The portability guarantee — and, on platforms without native skill install, the actual working copy an AI reads and follows directly. | Yes |
 | `AIOS/history/chat-history/cowork/` | **Generated automatically**, on a schedule, by `backup-cowork.py` — every conversation as readable Markdown. Don't read at session start; open one only when asked about an old conversation. | **No — machine-written** |
 | `AIOS/history/chat-history/cowork-raw/` | **Generated.** The same conversations exactly as Claude stored them (`.jsonl`) — the real backup; the Markdown above is for reading. | **No — machine-written** |
+| `AIOS/history/chat-history/curated/` | Curated write-ups from `chronicle`/`save-chat` — decisions and action items pulled to the top. | Yes — append only |
 | `AIOS/history/scripts/` | **Generated.** One run history note per script, appended automatically by `scriptlog.py` every time any script runs. | **No — machine-written** |
-| `AIOS/generated/` | **Generated.** `git-status.md` — whether the vault's optional git backup is actually committed and pushed, written by `vault-snapshot.py`. | **No — machine-written** |
-| `AIOS/reference/` | Docs opened on demand, never at session start. `canon.md` (facts that appear in more than one note) and `blueprint-changes.md` (what each blueprint update actually does, in plain English). | Yes |
+| `AIOS/generated/` | **Generated, never hand-edited.** `git-status.md` (is the optional git backup committed/pushed), `where.md` (one-grep note index), `commands.md` (every trigger phrase, flat), `taste.md` (every `## Taste` section, compiled), `happened.md` (every diary event, indexed), `scale.md` (per-folder note counts). | **No — machine-written** |
+| `AIOS/reference/` | Docs opened on demand, never at session start: `canon.md` (facts repeated in more than one note), `naming.md` (naming scheme + duplicate check), `vault-conventions.md` (tags, status values, daily-note anatomy), `routines.md` (full steps for every routine), `moves.md` (register of every relocation), `migration.md` (hand-to-a-different-AI file), `setup.md` (every script, cataloged), `blueprint-changes.md` (what each blueprint update actually does, in plain English). | Yes |
 | `AIOS/config/` | Machine-readable state. `blueprint-manifest.json` says which shipped files belong to the blueprint versus to you; `blueprint-state.json` remembers which blueprint version you're on and what you've already said no to. | **Written by scripts — safe to delete, you'll just get re-asked once** |
 | `AIOS/history/blueprint-updates/` | **Generated.** A dated copy of every file a blueprint update overwrote, taken before it was overwritten. This is what makes `--undo` real instead of a promise. | **No — machine-written** |
 | `Atlas/` | Knowledge, reference, clippings. Timeless material. | Yes |
@@ -46,8 +47,9 @@ and `Privat/` for the part no AI touches.
 | `Atlas/Worlds/` | One note per game world/save/server — coordinates, seeds, mods, versions. | Yes |
 | `Atlas/Radar.md` | Things you're curious about but haven't started. A queue, not a subject. | Yes — append |
 | `Calendar/` | Anything anchored to a date. | Yes |
-| `Calendar/Daily/` | `YYYY-MM-DD.md`. Brief + log + `## Changes` audit trail. | Yes — **append only** |
+| `Calendar/Daily/` | `YYYY-MM-DD.md`. Brief + Diary + `## Changes` audit trail — see [[vault-conventions]] for what owns each section. | Yes — **append only** |
 | `Calendar/Weekly/` | `YYYY-Wnn.md`. Output of `weekly-review`. | Yes |
+| `Calendar/Events/` | `YYYY/<Title>.md` — a trip, an appointment, anything dated that isn't a project. Created by `event.py`, never by hand; it links itself into every daily note it covers. | Yes — via `event.py` |
 | `Efforts/` | Active projects, one note each. | Yes |
 | `Inbox/` | **Drop zone** — `Screenshots/` and `Files/`. Dump things here with no naming; the AI reads the facts off them and files them. **A file sitting here is unprocessed.** | Yes — and empty it once processed |
 | `Attachments/` | Images already embedded in a note. Stops screenshots landing at the vault root. | Yes |
@@ -90,21 +92,27 @@ table is the difference between one file read and a folder scan.
 | What software I use | `Atlas/Reference/My software stack.md` |
 | What accounts I have and what I'm paying for | `Atlas/Reference/My online accounts.md` |
 | **Something I dropped in for you to deal with** | `Inbox/` — say "check my inbox" |
+| **When did I do X / find out about my own past events** | `python3 AIOS/scripts/diary.py --when "<thing>"` — never answer this from memory |
+| **A trip / appointment / exam week — anything dated that isn't a project** | `Calendar/Events/YYYY/` — `python3 AIOS/scripts/event.py --today` / `--upcoming 14` answer "what's on" without opening a note |
 | What tooling exists | `AIOS/skill-map.md` |
+| **What every script does** | `AIOS/reference/setup.md` |
 | Daily notes / journal | `Calendar/Daily/` |
 | Weekly reviews | `Calendar/Weekly/` |
 | A specific project | `Efforts/<Project>.md` — **add a row here per project** |
+| **Does a note for this already exist** | `python3 AIOS/scripts/route-check.py --exists "<subject>"` — before creating anything |
 | Private diary | **Nowhere. Don't.** |
 
 ## Reading order for a new session
 
 1. `AIOS/me.md` — identity and working rules
-2. This file — where things are
-3. `AIOS/skill-map.md` — what tooling exists
-4. `Atlas/About Me/Working with AI.md` — **always. No condition.**
-5. Then, **only if relevant to the request**, the specific project note.
+2. `AIOS/character.md` — voice and tone, if you've customised it. How the AI
+   talks, not what it does — behavior rules stay in `me.md`.
+3. This file — where things are
+4. `AIOS/skill-map.md` — what tooling exists
+5. `Atlas/About Me/Working with AI.md` — **always. No condition.**
+6. Then, **only if relevant to the request**, the specific project note.
 
-> [!failure] Step 4 used to have a condition on it, and the condition failed
+> [!failure] Step 5 used to have a condition on it, and the condition failed
 > It said "read this if the session involves doing real work rather than
 > answering a question." An AI has to *judge* that, and a condition an AI has to
 > judge is a condition it will skip. Made unconditional. Learn from it: don't put
@@ -113,100 +121,27 @@ table is the difference between one file read and a folder scan.
 Do not scan `Efforts/` or `Atlas/` wholesale. Use this map to open the one or two
 files that matter.
 
-## Naming and structure conventions
+## Naming, tags, status values, daily-note anatomy
 
-| Thing | Convention |
-|---|---|
-| Daily notes | `YYYY-MM-DD.md` in `Calendar/Daily/` |
-| Weekly reviews | `YYYY-Wnn.md` (ISO week) in `Calendar/Weekly/` |
-| Project notes | Title Case, named after the project, in `Efforts/` |
-| Knowledge notes | Named after the concept, sentence case: `Systemd units.md` |
-| Media notes | The actual title, exactly as written: `The Left Hand of Darkness.md` |
-| Index notes | Named after their folder: `Atlas/Atlas.md`, `Efforts/Efforts.md` |
-| Frontmatter | Every note has `title` and `tags`. Projects add `status` and `started`. |
-| Links | Wikilinks internally (`[[Note name]]`), `[text](url)` for external only |
-| Accented characters in filenames | Avoid them — safer across tools and sync clients. Accents are fine in note titles and body text. |
+Moved to **`AIOS/reference/vault-conventions.md`** — mechanics for *writing* a
+note, not for finding one, so it doesn't need to be boot-loaded. Opened on
+demand, or by the `vault-librarian` skill when it fires. The naming scheme and
+the before-you-create-a-note duplicate check live in **`AIOS/reference/naming.md`**.
 
-### Anatomy of a daily note — three sections, three owners
+## Scale — per-folder note counts
 
-A daily note has `## Brief`, `## Log` and `## Changes`, and they are **not**
-interchangeable:
-
-| Section | Who writes it | What goes in it |
-|---|---|---|
-| `## Brief` | The `daily-brief` routine | Weather, calendar, deadlines, project momentum, one suggested focus |
-| `## Log` | **You**, via `log` — **and the AI, for events** | Your thoughts and events, timestamped `HH:MM`. If you mention something you did or that happened today, the AI logs it here in the same turn without being asked. Only *reflections* are yours alone to write. |
-| `## Changes` | `AIOS/scripts/logchange.py` | One timestamped line per vault write — what changed and which file. **Receipts, not content.** |
-
-> [!warning] `## Changes` is not storage
-> The line says *what* changed and *where*. The fact itself lives in its subject
-> note. An AI that starts putting facts directly into `## Changes` has rebuilt
-> the catch-all file `me.md` bans, just spread across ninety dated files.
-
-### Tag scheme
-
-- **Type:** `#index`, `#project`, `#knowledge`, `#reference`, `#media`, `#world`,
-  `#radar`, `#about-me`, `#daily`, `#weekly`, `#clipping`, `#generated`
-- **Domain:** add your own — `#linux`, `#selfhosting`, `#music`, `#work`,
-  whatever your life actually contains. Don't keep tags you never use.
-- **Media subtype** (on `Atlas/Media/` notes, alongside `#media`): `#book`,
-  `#film`, `#show`, `#game`, and so on
-- Status lives in frontmatter, not in tags.
-
-### Status vocabulary — per folder
-
-`AIOS/scripts/vault-check.py` enforces this table. If you change it here, change
-it there too.
-
-| Folder | Allowed `status:` values |
-|---|---|
-| `Efforts/` | `active` · `planned` · `upcoming` · `stalled` · `parked` · `done` |
-| `Atlas/Media/` | `watching` · `reading` · `playing` · `finished` · `dropped` · `on hold` |
-| `Atlas/Worlds/` | `active` · `parked` · `dead` · `unconfirmed` |
-
-`stalled` means: it has a real next action and nothing is happening. That's a
-different problem from `parked`, which means it's deliberately off. Keeping them
-separate is the point — one needs a nudge, the other needs leaving alone.
-
-### Knowledge vs Reference — the boundary blurs, so here's the test
-
-*Would I re-read this to understand something, or to copy a command out of it?*
-Understanding → `Knowledge/`. Copying → `Reference/`.
-
-In practice `Reference/` swallows almost everything, and that's survivable.
-Wikilinks resolve by filename in Obsidian, so a note in the "wrong" folder isn't
-broken — it's just untidy. Don't spend an afternoon reorganising this.
-
-### Live views — use a `.base`, not `dataview`
-
-**Dataview is a community plugin and isn't installed by default.** A
-` ```dataview ` block in a vault without it renders as a grey box that links
-nothing — which silently breaks index notes, and you won't notice for weeks.
-
-**Bases** is a core Obsidian plugin and is enabled out of the box. Use it. Create
-a `.base` file and embed it in the folder's index note with `![[Name.base]]`. A
-folder whose index embeds a base never needs its list updated by hand again.
-
-Suggested ones to make once you have notes: `Efforts/Efforts.base` (projects by
-status), `Atlas/Media/Media.base` (what you're on right now).
-
-## Notes on scale
-
-> [!warning] Don't trust a note count written by hand — count it
-> This field goes stale within days. `python3 AIOS/scripts/vault-check.py`
-> compares the number below against reality and complains when they diverge.
-
-**<< N >> notes, per `vault-check.py` on << date >>.** Counting `.md` files
-outside `Privat/` and outside the `AIOS/skills/` mirror.
-
-Scanning a whole vault stops being cheap somewhere around 100 notes. **Use this
-map.** Re-scan and rewrite this file at ~200 notes, or whenever `vault-check.py`
-starts reporting things this file doesn't mention. Don't reorganise anything
-while doing it — only rewrite this file.
+Moved to **`AIOS/generated/scale.md`** — a hand-typed count goes stale the
+moment it's written, and a script can count more reliably than a human can
+retype. Rebuilt automatically by `vault-map.py` on every note create/delete;
+nags out loud once the vault has grown noticeably since the folder map above
+was last reviewed. Stamp a review: `python3 AIOS/scripts/vault-map.py --reviewed`.
 
 ## Related
 
 - [[Home]] — vault entry point
 - [[me]] — identity
 - [[skill-map]] — tooling
+- [[vault-conventions]] — naming, tags, status values, daily-note anatomy
+- [[naming]] — one subject, one note, and the check that keeps it that way
 - [[how-to-use-this]] — the one guide
+- [[scale]] — per-folder note counts

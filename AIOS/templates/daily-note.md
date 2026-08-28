@@ -23,9 +23,9 @@ tags:
 
 ---
 
-## Log
+## Diary
 
-%% Appended through the day by the `log` routine. Timestamped. Never overwritten. %%
+%% What actually happened today, in plain lines — yours, or the AI's on your behalf the moment you mention something. Appended by the `diary` routine, or type into it yourself. Never overwritten. %%
 
 ## Changes
 
