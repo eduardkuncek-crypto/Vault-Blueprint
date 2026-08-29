@@ -146,3 +146,28 @@ Blueprint release check — /sessions/eager-tender-hopper/mnt/Vault Blueprint
 
 Clean. Safe to push.
 ```
+
+### 2026-08-28 09:27:47 — OK (4.72s)
+
+args: `['--push']`
+
+```text
+Blueprint release check — /home/eduard/Dropbox/Vault Blueprint
+
+[ ok ] 30 scripts compile
+[ ok ] manifest is current
+[ ok ] 16 change entries in blueprint-changes.md
+[ ok ] every changed system file is described in plain English
+       5 documented exception(s) — read them:
+         LICENSE  ::  \beduard\b
+         LICENSE  ::  kuncek
+         *  ::  eduardkuncek-crypto
+         *  ::  github\.com/eduardkuncek
+         AIOS/scripts/blueprint-release.py  ::  \bai os\b
+[ ok ] denylist scan clean
+
+Clean. Safe to push.
+
+[main b1cf49b] The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+[ ok ] pushed — downstream vaults can see this now
+```

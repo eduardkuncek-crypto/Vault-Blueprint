@@ -5302,3 +5302,1491 @@ remove the file manually to continue.
 
   written to       AIOS/generated/git-status.md
 ```
+
+### 2026-08-28 09:30:01 — OK (0.05s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      1 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 09:40:01 — OK (0.07s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 09:54:27 — OK (0.07s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 10:00:01 — OK (0.04s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 10:10:01 — OK (0.06s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 10:20:01 — OK (0.05s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 10:30:01 — OK (0.13s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 10:40:01 — OK (0.07s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 10:50:53 — OK (0.35s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 14:00:01 — OK (0.11s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 14:10:02 — OK (0.06s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 14:20:01 — OK (0.05s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 14:30:02 — OK (0.04s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 14:40:01 — OK (0.04s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 16:50:01 — OK (0.09s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 17:00:02 — OK (0.22s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 17:10:01 — OK (0.10s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 17:20:01 — OK (0.10s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 17:30:01 — OK (0.07s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 17:40:01 — OK (0.08s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 20:30:01 — OK (0.07s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 20:40:01 — OK (0.06s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 20:50:01 — OK (0.03s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 21:00:01 — OK (0.10s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 21:10:01 — OK (0.08s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 21:20:01 — OK (0.10s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 21:30:02 — OK (0.07s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 21:40:01 — OK (0.07s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 23:50:02 — OK (0.14s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 22:00:09 — OK (0.08s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 22:10:02 — OK (0.07s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 22:20:05 — OK (0.07s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 22:30:02 — OK (0.05s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 22:40:03 — OK (0.07s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 22:50:04 — OK (0.05s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-29 01:00:07 — OK (0.11s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 23:00:22 — OK (0.05s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-29 01:10:06 — OK (0.08s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 23:10:21 — OK (0.04s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-28 23:20:03 — OK (0.11s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-29 09:40:01 — OK (0.11s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-29 09:50:01 — OK (0.08s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-29 10:00:01 — OK (0.07s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-29 10:10:01 — OK (0.10s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-29 10:30:01 — OK (0.17s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-29 10:40:01 — OK (0.08s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-29 10:51:19 — OK (0.04s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-29 11:00:02 — OK (0.13s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-29 15:30:02 — OK (0.15s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-29 15:40:02 — OK (0.07s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-29 16:00:00 — OK (0.15s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-29 16:10:01 — OK (0.11s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-29 16:20:01 — OK (0.12s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-29 16:30:02 — OK (0.08s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-29 16:40:01 — OK (0.06s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-29 17:00:01 — OK (0.11s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-29 17:10:01 — OK (0.09s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-29 18:50:29 — OK (0.15s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-29 20:10:01 — OK (0.05s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-29 20:20:01 — OK (0.05s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-29 20:30:02 — OK (0.10s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      2 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
+
+### 2026-08-29 20:40:02 — OK (0.13s)
+
+args: `[]`
+
+```text
+BROKEN — The vault is NOT fully backed up by git.
+
+  branch           main
+  remote           git@github.com:eduardkuncek-crypto/Vault-Blueprint.git  (ssh)
+  last commit      b1cf49b The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
+  uncommitted      3 file(s)
+  unpushed         0
+
+  NOTE  git add failed: fatal: Unable to create '/home/eduard/Dropbox/Vault Blueprint/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+  written to       AIOS/generated/git-status.md
+```
