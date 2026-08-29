@@ -68,6 +68,50 @@ def git(*args, timeout=120):
         return 124, "", f"git {args[0]} timed out after {timeout}s"
 
 
+def clear_stale_lock(max_age_seconds: int = 300) -> str | None:
+    """Remove `.git/index.lock` if it's old enough to be safely assumed dead.
+
+    WHY THIS EXISTS
+    ----------------
+    Found 2026-08-29: a single interrupted git process (this vault's own
+    tooling got killed mid-`git commit`) left `.git/index.lock` behind, and
+    every run after that — every 10 minutes, for 1.5 days — failed with
+    "Unable to create '.git/index.lock': File exists" and quietly wrote
+    BROKEN into a generated note nobody was reading. The push pipeline
+    doesn't come back from that on its own; someone has to notice the note
+    and delete the file by hand.
+
+    A lock file genuinely held by a running git process is always younger
+    than this script's own runs — every git call here finishes in seconds.
+    So a lock older than `max_age_seconds` (default 5 min — an order of
+    magnitude more than any real operation needs, well under the 10-minute
+    cron cadence) is never a live process; it's a corpse. Clearing it is the
+    same fix git's own error message tells a human to do by hand:
+
+        "If it still fails, a git process may have crashed in this
+         repository earlier: remove the file manually to continue."
+
+    Returns a one-line note for the status report if a lock was cleared,
+    else None.
+    """
+    lock = VAULT / ".git" / "index.lock"
+    if not lock.exists():
+        return None
+    try:
+        age = dt.datetime.now().timestamp() - lock.stat().st_mtime
+    except OSError:
+        return None
+    if age < max_age_seconds:
+        # Young enough that a concurrent git process could genuinely hold
+        # it — leave it alone rather than race a real operation.
+        return None
+    try:
+        lock.unlink()
+    except OSError as e:
+        return f"stale lock found (age {age / 60:.0f}m) but could not remove it: {e}"
+    return f"cleared a stale .git/index.lock (age {age / 60:.0f}m) before running — see docstring"
+
+
 def ensure_repo() -> tuple:
     """git init if there's no repo yet. Returns (ok, message)."""
     if (VAULT / ".git").exists():
@@ -97,11 +141,16 @@ def collect() -> dict:
         "dirty_files": 0,
         "unpushed": None,
         "errors": [],
+        "notes": [],
     }
 
     if not (VAULT / ".git").exists():
         s["errors"].append("no git repo here yet — run this script once to create one")
         return s
+
+    lock_note = clear_stale_lock()
+    if lock_note:
+        (s["notes"] if "could not remove" not in lock_note else s["errors"]).append(lock_note)
 
     rc, _, err = git("rev-parse", "--git-dir")
     if rc != 0:
@@ -200,6 +249,7 @@ def snapshot(push=True) -> dict:
 
     after = collect()
     after["errors"] = s["errors"] + after["errors"]
+    after["notes"] = s.get("notes", []) + after.get("notes", [])
     for k in ("committed", "pushed_at"):
         if k in s:
             after[k] = s[k]
@@ -261,6 +311,8 @@ def write_status_note(s: dict) -> None:
 
     if s["errors"]:
         lines += ["", "## Notes", ""] + [f"- {e}" for e in s["errors"]]
+    if s.get("notes"):
+        lines += ["", "## Self-healed", ""] + [f"- {n}" for n in s["notes"]]
 
     lines += [
         "", "## Related", "", "- [[Home]]", "",
@@ -283,6 +335,8 @@ def print_report(s: dict) -> None:
         print(f"  pushed at        {s['pushed_at']}")
     for e in s["errors"]:
         print(f"\n  NOTE  {e}")
+    for n in s.get("notes", []):
+        print(f"\n  SELF-HEALED  {n}")
     print(f"\n  written to       {STATUS_NOTE.relative_to(VAULT)}\n")
 
 
