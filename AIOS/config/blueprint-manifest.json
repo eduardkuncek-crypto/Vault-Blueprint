@@ -150,9 +150,9 @@
       "sha256": "6ab81df2fd085013b76de8f16e88f8a5d33fe2a074610f5bc35389d430b7c46a"
     },
     "AIOS/scripts/catalog.py": {
-      "bytes": 10656,
+      "bytes": 10704,
       "class": "system",
-      "sha256": "39133a0ec3769852cbc19443341994d06e8c15f63bb60b597e2527cb4fc9d03f"
+      "sha256": "0085f9637621e5e94b7835a2f340d9083f537e1e7a58e0f4a6d0debd9436f8d1"
     },
     "AIOS/scripts/changelog-check.py": {
       "bytes": 6654,
@@ -570,5 +570,5 @@
       "sha256": "6741fa9e7f0219b3e79f7c11de2c8011effa7e703f8a88af53bde3e10f54250a"
     }
   },
-  "generated": "2026-09-11T10:14:49"
+  "generated": "2026-09-11T10:23:08"
 }

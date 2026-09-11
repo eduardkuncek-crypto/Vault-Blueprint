@@ -275,7 +275,8 @@ def render(media, worlds, deciding, bought) -> str:
     lines.append("- [[Worlds]]")
     lines.append("- [[Efforts]]")
     lines.append("- [[Money]]")
-    lines.append("- [[taste]] -- opinions on this stuff, not just the list")
+    if (P.GENERATED / "taste.md").exists():
+        lines.append("- [[taste]] -- opinions on this stuff, not just the list")
     return "\n".join(lines).rstrip("\n") + "\n"
 
 
