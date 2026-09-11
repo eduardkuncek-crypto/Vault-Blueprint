@@ -59,7 +59,7 @@ are.
 
 ### id: screenshot-stamping
 title: A screenshot you send now gets its facts saved permanently, not just read once
-files: AIOS/scripts/shot.py, AIOS/skills/auto-capture/SKILL.md, AIOS/vault-map.md, AIOS/scripts/setup.py
+files: AIOS/scripts/shot.py, AIOS/skills/auto-capture/SKILL.md, AIOS/vault-map.md, AIOS/scripts/setup.py, AIOS/history/screenshots/Screenshots.md
 needs: nothing
 
 Before this, a screenshot got looked at once and the facts in it — coordinates,
@@ -72,7 +72,7 @@ picture out of the vault entirely, its story survives with it.
 
 ### id: money-tracking
 title: Track your real balance without opening a banking app mid-conversation
-files: AIOS/scripts/money.py, Atlas/About Me/Money.md, AIOS/skill-map.md, AIOS/vault-map.md
+files: AIOS/scripts/money.py, Atlas/About Me/Money.md, AIOS/skill-map.md, AIOS/vault-map.md, Atlas/About Me/About Me.md
 needs: nothing
 
 State a number — "spent 40 on X" or "I've got 350 in the bank" — and it gets
@@ -102,7 +102,7 @@ in the next N days instead of asking an AI to do the date math from memory.
 
 ### id: screentime-tracking
 title: Screen time and sleep, logged as you mention them
-files: AIOS/scripts/screentime.py, Atlas/About Me/Screen time.md, AIOS/skill-map.md
+files: AIOS/scripts/screentime.py, Atlas/About Me/Screen time.md, AIOS/skill-map.md, Atlas/About Me/About Me.md
 needs: nothing
 
 State an hours number and it's appended to a running log with a rolling
@@ -206,6 +206,16 @@ command with a blank you have to fill in yourself; when ranking options, name
 the close runner-up too, not just the winner; tell you plainly when a
 connector or folder isn't shared yet instead of quietly working around it;
 and say something when a conversation is getting close to its context limit.
+
+### id: research-folder
+title: A dedicated place for things you actually looked up
+files: Atlas/Research/Research.md, Atlas/Atlas.md, AIOS/vault-map.md
+needs: nothing
+
+New `Atlas/Research/` folder for one note per question you've looked up —
+answer, sources, what would change it. Checking here before researching the
+same thing twice was previously not possible; there was nowhere for that
+kind of note to live.
 
 ### id: setup-checks-catch-up
 title: The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
