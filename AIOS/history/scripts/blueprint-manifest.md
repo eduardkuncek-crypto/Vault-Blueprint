@@ -373,3 +373,63 @@ args: `['--check']`
 ```text
 Manifest is current — 98 files.
 ```
+
+### 2026-09-11 10:08:25 — OK (0.08s)
+
+args: `['--check']`
+
+```text
++ AIOS/scripts/accounts-audit.py  (system)
+  + AIOS/scripts/backup-claude-code.py  (system)
+  + AIOS/scripts/capture-heartbeat.py  (system)
+  + AIOS/scripts/catalog.py  (system)
+  + AIOS/scripts/cooldowns.py  (system)
+  + AIOS/scripts/machine-snapshot.py  (system)
+  + AIOS/scripts/money.py  (system)
+  + AIOS/scripts/screentime.py  (system)
+  + AIOS/scripts/shot.py  (system)
+  + AIOS/scripts/weekly-digest.py  (system)
+  + Atlas/About Me/Money.md  (seed)
+  + Atlas/About Me/Screen time.md  (seed)
+  + Atlas/Reference/My online accounts.md  (seed)
+  + Atlas/Research/Research.md  (seed)
+  ~ AIOS/me.md
+  ~ AIOS/reference/blueprint-changes.md
+  ~ AIOS/scripts/setup-check.py
+  ~ AIOS/scripts/setup.py
+  ~ AIOS/scripts/vault-snapshot.py
+  ~ AIOS/skill-map.md
+  ~ AIOS/skills/auto-capture/SKILL.md
+  ~ AIOS/skills/vault-first/SKILL.md
+  ~ AIOS/skills/vault-librarian/SKILL.md
+  ~ AIOS/vault-map.md
+  ~ Atlas/About Me/About Me.md
+  ~ Atlas/Atlas.md
+  ~ Atlas/Reference/Reference.md
+  ~ README.md
+
+14 added, 0 removed, 14 changed. Re-run without --check to write it.
+```
+
+### 2026-09-11 10:09:20 — OK (0.12s)
+
+args: `[]`
+
+```text
+Wrote AIOS/config/blueprint-manifest.json — 112 files: 5 brain, 24 seed, 13 setup, 7 structure, 63 system
+
+brain files (a script will never write these):
+  AIOS/how-to-use-this.md
+  AIOS/me.md
+  AIOS/skill-map.md
+  AIOS/vault-map.md
+  CLAUDE.md
+```
+
+### 2026-09-11 10:09:33 — OK (0.07s)
+
+args: `['--check']`
+
+```text
+Manifest is current — 112 files.
+```

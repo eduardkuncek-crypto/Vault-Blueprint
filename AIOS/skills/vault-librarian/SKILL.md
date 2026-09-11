@@ -19,8 +19,8 @@ Exit `1` means a note for that subject already exists — **append to it, don't
 create a second one.** The check strips the verb out of the name and compares
 the subject, so *Bike Purchase · Buying a bike · Bike budgeting* all land on
 one note, while *Laptop Purchase* correctly doesn't. It searches note bodies
-too, so `--exists "setting up jellyfin"` finds a note called `Home Server.md`
-even though the words don't match the title.
+too, so `--exists "setting up a media server"` finds a note called
+`Home Server.md` even though the words don't match the title.
 
 This is the single cheapest thing that keeps the vault findable. Run it first,
 before writing anything — catching the duplicate after it exists is worse than

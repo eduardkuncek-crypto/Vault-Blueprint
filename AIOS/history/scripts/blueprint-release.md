@@ -171,3 +171,48 @@ Clean. Safe to push.
 [main b1cf49b] The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
 [ ok ] pushed — downstream vaults can see this now
 ```
+
+### 2026-09-11 10:08:26 — OK (5.10s)
+
+args: `['--check']`
+
+```text
+Blueprint release check — /home/eduard_kuncek_laptop/Dropbox/Vault Blueprint
+
+[ ok ] 40 scripts compile
+[ !! ] manifest is stale — run blueprint-manifest.py
+[ ok ] 31 change entries in blueprint-changes.md
+[ ok ] every changed system file is described in plain English
+       5 documented exception(s) — read them:
+         LICENSE  ::  \beduard\b
+         LICENSE  ::  kuncek
+         *  ::  eduardkuncek-crypto
+         *  ::  github\.com/eduardkuncek
+         AIOS/scripts/blueprint-release.py  ::  \bai os\b
+[ !! ] DENYLIST HIT — 1 match(es). Do not push:
+         AIOS/skills/vault-librarian/SKILL.md: /\bjellyfin\b/ → 'too, so `--exists "setting up jellyfin"` finds a note called `Home S'
+
+2 problem(s). Fix them, then re-run.
+```
+
+### 2026-09-11 10:09:34 — OK (4.93s)
+
+args: `['--check']`
+
+```text
+Blueprint release check — /home/eduard_kuncek_laptop/Dropbox/Vault Blueprint
+
+[ ok ] 40 scripts compile
+[ ok ] manifest is current
+[ ok ] 31 change entries in blueprint-changes.md
+[ ok ] every changed system file is described in plain English
+       5 documented exception(s) — read them:
+         LICENSE  ::  \beduard\b
+         LICENSE  ::  kuncek
+         *  ::  eduardkuncek-crypto
+         *  ::  github\.com/eduardkuncek
+         AIOS/scripts/blueprint-release.py  ::  \bai os\b
+[ ok ] denylist scan clean
+
+Clean. Safe to push.
+```
