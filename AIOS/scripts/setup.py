@@ -12,12 +12,18 @@ What it does
   1. Checks Python is new enough.
   2. Creates the folders the automation writes into.
   3. Finds a scheduler for this OS (cron on Linux/macOS, Task Scheduler on
-     Windows) and, if one exists, installs three recurring jobs — none
+     Windows) and, if one exists, installs these recurring jobs — none
      duplicated if already present:
        - the chat backup (backup-cowork.py), hourly
        - the changelog safety net (changelog-check.py), every 30 min
        - the git snapshot (vault-snapshot.py), every 10 min — only if git
          is installed; entirely optional, see that script's own docstring
+       - the Claude Code session backup (backup-claude-code.py), hourly —
+         only if this machine has ever run Claude Code (a `~/.claude/projects`
+         folder exists); optional, does nothing if that tool isn't used here
+       - the capture heartbeat (capture-heartbeat.py), every 30 min —
+         optional, only useful once you're actually using the `auto-capture`
+         skill day to day
   4. Runs the vault's own health check and prints the result.
   5. Prints exactly what still needs a human — installing an app, signing
      into an account. A script that half-installs something with sudo is
@@ -90,6 +96,9 @@ def make_folders(dry):
     for d in (
         VAULT / "AIOS" / "history" / "chat-history" / "cowork",
         VAULT / "AIOS" / "history" / "chat-history" / "cowork-raw",
+        VAULT / "AIOS" / "history" / "chat-history" / "claude-code",
+        VAULT / "AIOS" / "history" / "chat-history" / "claude-code-raw",
+        VAULT / "AIOS" / "history" / "screenshots",
         VAULT / "AIOS" / "history" / "scripts",
         VAULT / "AIOS" / "generated",
         VAULT / "AIOS" / "reference",
@@ -211,6 +220,17 @@ def do_setup(dry):
     else:
         todo("git isn't installed — skipping the optional version-history "
              "snapshot. Install git any time and re-run this to turn it on.")
+
+    if (Path.home() / ".claude" / "projects").is_dir():
+        install_job("backup-claude-code", "backup-claude-code.py", 60, dry,
+                     required=False)
+    else:
+        todo("no Claude Code session folder found on this machine — skipping "
+             "the optional Claude Code chat backup. Safe to ignore if you "
+             "only use Cowork/Claude Desktop.")
+
+    install_job("capture-heartbeat", "capture-heartbeat.py", 30, dry,
+                 required=False)
 
     run_checks()
     manual_steps()

@@ -64,3 +64,12 @@ args: `[]`
 canon-check — /sessions/eager-tender-hopper/mnt/Vault Blueprint
   0 checkable facts, 0 recorded only
 ```
+
+### 2026-09-11 10:04:59 — OK (0.00s)
+
+args: `[]`
+
+```text
+canon-check — /home/eduard_kuncek_laptop/Dropbox/Vault Blueprint
+  0 checkable facts, 0 recorded only
+```

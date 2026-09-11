@@ -16,6 +16,7 @@ pushing, it lives here.
 | [[Worlds]] | Game worlds, saves, servers — coordinates, seeds, mods, versions |
 | [[Knowledge]] | Notes written to understand a concept |
 | [[Reference]] | Cheatsheets, specs, your own hardware and accounts |
+| [[Research]] | One note per question you actually looked up — answer, sources, what would change it |
 | [[Clippings]] | Saved web articles with summaries |
 | [[Radar]] | Things you're curious about but haven't started |
 

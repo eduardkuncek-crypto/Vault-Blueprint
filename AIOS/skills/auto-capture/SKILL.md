@@ -1,6 +1,6 @@
 ---
 name: "auto-capture"
-description: "Capture EVERYTHING the user says about themselves and their life into their Obsidian vault, as it comes up — no filtering, no judgement about what matters. Decisions, project state, grades, specs, prices, family, opinions, tastes, media and characters they liked, game state from screenshots, plans, complaints, things they want. If a fact has no home, create one. EVERY write is then logged as one timestamped line in today's daily note under `## Changes`, via AIOS/scripts/logchange.py — the daily note is the receipt, the subject note is the content. AND every corrected fact is registered in AIOS/reference/canon.md and checked with canon-check.py, so the correction reaches every note that repeats it instead of only the one you edited. Never claim something was saved before the write actually happened. Also mirrors any created or changed skill into AIOS/skills/. One note per subject, facts not transcripts. Use continuously in every session in the vault."
+description: "Capture EVERYTHING the user says about themselves and their life into their Obsidian vault, as it comes up — no filtering, no judgement about what matters. Decisions, project state, grades, specs, prices, family, opinions, tastes, media and characters they liked, game state from screenshots, plans, complaints, things they want. Skip capture only when a message has zero personal content attached — pure math, a unit conversion, a fact-lookup with nothing about them in it; if a fact has no home, create one. EVERY write is then logged as one timestamped line in today's daily note under `## Changes`, via AIOS/scripts/logchange.py — the daily note is the receipt, the subject note is the content. AND every corrected fact is registered in AIOS/reference/canon.md and checked with canon-check.py, so the correction reaches every note that repeats it instead of only the one you edited. Never claim something was saved before the write actually happened. Also mirrors any created or changed skill into AIOS/skills/. Backed by two automated backstops — a frequent fresh-context audit and a mechanical cron heartbeat — so a live-session miss doesn't survive the day. One note per subject, facts not transcripts. Use continuously in every session in the vault."
 ---
 
 # Auto Capture
@@ -29,9 +29,19 @@ boring ones are the ones that are impossible to reconstruct later.
 **When you catch yourself thinking "they probably don't need that saved" — that
 is the exact moment to save it.** That thought is the failure mode, not a signal.
 
-### The only things NOT captured
+### The only exception: zero personal content
 
-Short list. Everything not on it gets written down.
+**One exception, not a list.** Skip capture only when a message has **nothing**
+in it about them, their life, or anything they own, think, plan, or want — pure
+computation or general knowledge with no personal content attached. Basic math,
+a unit conversion, a capital-city lookup, a dictionary question with no
+connection to them. If a message mixes a fact about them into an otherwise
+generic question, the fact still gets captured — the exception is for messages
+with nothing to capture, not for messages that happen to also ask something
+else.
+
+A few things are structurally out of scope — not "not worth it," but "not a
+fact about them to capture in the first place":
 
 - **Anything from or about `Privat/`.** Never read, never written, never
   referenced.
@@ -39,8 +49,12 @@ Short list. Everything not on it gets written down.
 - **Things you told them**, restated back. Capture *their* facts, not your own
   output. (Exception: a decision they agreed to, or a number you researched that
   they'll need again — those go in with their source.)
-- **Options still being weighed** in `Efforts/` and `Atlas/Knowledge/` notes.
-  Once they pick, the decision gets logged.
+
+**Options still being weighed get captured immediately, not deferred.** The
+options themselves, the comparison, the fact that they're considering
+something — all of it goes in as soon as they say it. Waiting until they pick
+before logging anything is the wrong reading of this rule; a decision line gets
+*added on top* once they do pick, it doesn't replace capturing the weighing.
 
 That's the whole exclusion list. If something isn't on it, write it down.
 
@@ -224,6 +238,31 @@ happens in that same turn**, before the reply is composed.
 
 ---
 
+## The backstop: two automated passes behind the live rules
+
+A text rule decays as a session's context fills — the fix is a **mechanism**,
+never a longer paragraph in this file. Two backstops run behind everything
+above, so a miss in the live session doesn't survive the day:
+
+- **A frequent fresh-context audit**, run as a scheduled task rather than a
+  local script because it has to actually read and reason about the day's chat
+  transcripts, not just pattern-match. It re-reads what was said against that
+  day's `## Changes` log and captures anything genuinely missed — quietly, only
+  surfacing if it actually found something. It runs often enough (well inside
+  an hour) that a miss gets caught the same day, not at some later nightly pass.
+- **A mechanical cron heartbeat**, `AIOS/scripts/capture-heartbeat.py` — no
+  reasoning involved, just clocks. It compares the newest chat-transcript
+  activity against the last `## Changes` timestamp and flags the gap if chat
+  happened with nothing logged for too long. It can't say *what* was missed,
+  only *that* something probably was — the smoke detector, not the fire
+  inspector; the audit above is the one that actually captures.
+
+Neither replaces capturing live — Rule Zero above still comes first, always.
+These exist because a live session provably misses facts mid-task, and a
+second pass with fresh eyes catches what the first one missed.
+
+---
+
 ## Capture immediately, not at the end
 
 Write to the vault **in the same turn the thing comes up**, then mention it in
@@ -323,6 +362,12 @@ to `AIOS/skills/<name>/SKILL.md`** in the vault.
   aren't worth syncing.
 - Then log it: `--kind skill`.
 
+> **Mirror and live skill must both be updated — fixing one is fixing neither.**
+> A stray duplicated frontmatter block was once removed from the vault mirror
+> but left in the installed skill; the installed copy kept silently reading
+> that leftover YAML block as body text until someone noticed. Update both
+> copies in the same turn, not the one you happen to be looking at.
+
 If they say *"re-sync my skills to the vault"*, do a full pass over every
 installed skill rather than just the one that changed.
 
@@ -344,6 +389,14 @@ the ones relevant to the question:
 
 These are exactly the details that are painful to recover later. Extract them
 all, route them, then answer the actual question.
+
+**Also copy the image itself into the vault before answering** — an uploaded
+image doesn't survive between sessions on its own, so an uncopied screenshot is
+a lost screenshot, not just an unread one. Use `AIOS/scripts/shot.py`: it files
+the image into a dated screenshots folder, embeds the extracted facts inside
+the image file itself so they survive being copied out of the vault, writes a
+short sidecar note linking it back to the subject note, and rows it into that
+folder's index. One command instead of four manual steps.
 
 ## Fun topics are not skippable topics
 

@@ -72,7 +72,15 @@ at session start.
 | `changelog` | Every single vault write, no exception | `logchange.py` appends the receipt and runs a few guards that keep generated files honest. |
 | `log` | You dictate a thought | Timestamp, clean typos only, append to today's diary. |
 | `next` | On request | Regenerate `Efforts/Next Actions.md` from project notes. |
-| `cooldown` | Any fixed waiting period, unprompted | Compute the unlock date for real, row in `Cooldowns.md`. |
+| `cooldown` | Any fixed waiting period, unprompted | `python3 AIOS/scripts/cooldowns.py --check` / `--upcoming N` — compute the unlock date for real, row in `Cooldowns.md`. `--resolve` moves a row to Passed. |
+| `money` | Any real balance, spend, or gift you mention | `python3 AIOS/scripts/money.py "<what>" <±amount>` for a transaction, or `--set-balance <amount> --note "..."` when you state a real number. Appends to a ledger, flags drift between what it predicted and what you actually reported. |
+| `catalog` | Any write to `Atlas/Media/`, `Atlas/Worlds/`, an `Efforts/*Purchase*.md` note, or a money note | `python3 AIOS/scripts/catalog.py` — rebuilds `AIOS/generated/catalog.md`, one rolled-up index of everything you're watching/reading/playing, worlds/servers, and purchases (deciding + bought). |
+| `screentime` | A screen-time or sleep number you state | `python3 AIOS/scripts/screentime.py --hours N [--sleep N]`. `--avg` for the rolling average. |
+| `accounts-audit` | Re-checking account state, or after a fresh signup pass | `python3 AIOS/scripts/accounts-audit.py --check` — ages every row in an "online accounts" reference table, flags anything unverified 14+ days. `--add`/`--add-active` to log a new one. |
+| `machine-snapshot` | Any `df`/`free`/`lsblk`-style numbers you paste or report | `python3 AIOS/scripts/machine-snapshot.py --machine "<label>" --disk "..." --ram "..."` — a dated row in a history file, so disk/RAM trends are visible instead of one stale reading. |
+| `shot` | Every image sent, no exception | `python3 AIOS/scripts/shot.py IMAGE --shows "..."` — embeds facts in the file itself, writes a sidecar note, adds an index row. |
+| `backup-claude-code` | Hourly (optional, your own machine's scheduler) | Claude Code CLI session transcripts → `AIOS/history/chat-history/claude-code/`. Same shape as `backup-cowork`, separate session store. |
+| `capture-heartbeat` | Every 30 min (optional, your own machine's scheduler) | Mechanical, no reasoning: flags when chat activity synced but today's `## Changes` got zero entries for 45+ minutes. |
 | `vault-map` | Any note created/deleted | Rebuilds the note-count table in `AIOS/generated/scale.md`. |
 | `route-check` | Any note created/deleted | Rebuilds `AIOS/generated/where.md`, the one-grep index. |
 | `naming` | Before creating any note | Checks this subject doesn't already have a note. |
@@ -90,7 +98,7 @@ at session start.
 | `project-status <project>` | On request | Where it stands, what's blocking it, next action. |
 | `decide <question>` | On request | Trade-offs with numbers, a recommendation. |
 | `learn <topic>` | On request | Scaffold a new `Knowledge/` note. |
-| `weekly-review` | Sunday (if scheduled) | What got done, what slipped. |
+| `weekly-review` | Sunday (if scheduled) | What got done, what slipped. `python3 AIOS/scripts/weekly-digest.py [--week YYYY-Wnn] [--write]` pulls the week's raw material (changes + checkboxes) first, so you're not opening 7 daily notes by hand. |
 | `rock-tumbler <note>` | On request | IDI feedback on writing, never rewrites. |
 | `chronicle` / `save-chat` | On request | Curated write-up from an already-backed-up chat. |
 | `migrate` | On request — "make vault migratable" | Refreshes `AIOS/reference/migration.md`'s inventory. |

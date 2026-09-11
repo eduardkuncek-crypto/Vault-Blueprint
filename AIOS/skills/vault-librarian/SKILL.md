@@ -1,6 +1,6 @@
 ---
 name: "vault-librarian"
-description: "Conventions for writing notes into the user's Obsidian vault — which folder a note belongs in, required frontmatter, tag scheme, file naming, linking rules, and how to create a new home when a fact doesn't fit anywhere. Use whenever creating, editing, moving, or naming any note in the vault, when the user says \"write this down\" / \"save this\" / \"make a note\", or when unsure where something goes."
+description: "Conventions for writing notes into the user's Obsidian vault — which folder a note belongs in, required frontmatter, tag scheme, file naming, linking rules, the check that stops one subject getting two notes, and how to create a new home when a fact doesn't fit anywhere. Use whenever creating, editing, moving, or naming any note in the vault, when the user says \"write this down\" / \"save this\" / \"make a note\", or when unsure where something goes."
 ---
 
 # Vault Librarian
@@ -8,6 +8,25 @@ description: "Conventions for writing notes into the user's Obsidian vault — w
 Conventions for the user's Obsidian vault. Follow these without being asked.
 
 Read `AIOS/vault-map.md` before placing a note anywhere unfamiliar.
+
+## Before you create a note — one command, every time
+
+```bash
+python3 AIOS/scripts/route-check.py --exists "<the name you were about to use>"
+```
+
+Exit `1` means a note for that subject already exists — **append to it, don't
+create a second one.** The check strips the verb out of the name and compares
+the subject, so *Bike Purchase · Buying a bike · Bike budgeting* all land on
+one note, while *Laptop Purchase* correctly doesn't. It searches note bodies
+too, so `--exists "setting up jellyfin"` finds a note called `Home Server.md`
+even though the words don't match the title.
+
+This is the single cheapest thing that keeps the vault findable. Run it first,
+before writing anything — catching the duplicate after it exists is worse than
+catching it before.
+
+Scheme and the "confirmed distinct" allowlist: `AIOS/reference/naming.md`.
 
 ## Where a note goes
 
@@ -67,6 +86,16 @@ the vault is built on. New subfolders inside `Atlas/` are fine and expected.
 | Media note | The actual title | `The Left Hand of Darkness.md` |
 | About Me note | Sentence case, named after the subject | `Daily routine.md` |
 | Index note | Same name as its folder | `Atlas/Atlas.md`, `Atlas/About Me/About Me.md` |
+
+Never `Untitled.md`, never a raw pasted-screenshot filename — nobody will grep
+for those. Audit what's already there:
+
+```bash
+python3 AIOS/scripts/route-check.py --dupes    # one subject, two notes
+python3 AIOS/scripts/route-check.py --naming   # filenames breaking the scheme
+```
+
+Both report only. Neither ever moves or deletes a file.
 
 ## Tags
 

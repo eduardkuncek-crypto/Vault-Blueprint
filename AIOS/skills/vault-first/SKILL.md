@@ -1,6 +1,6 @@
 ---
 name: "vault-first"
-description: "ALWAYS load before answering anything about the user, their life, or anything they own, watch, read, play or build. Open the matching note in their vault FIRST, then answer from it. Trigger on any mention of a show, film, book or game; their PC, laptop, phone, wifi, network or any hardware; school, work, grades, colleagues; any project; family, friends, food, money, plans, habits or opinions; any \"what's my favourite X\" or \"do you know my...\" question; and on vague references like \"my\", \"mine\", \"the one I told you about\", or a question that only makes sense if you know them. Trigger even when the question sounds casual, generic, or like a joke. ALSO trigger before ever saying a fact is not saved, not recorded, or not in the vault — that claim requires a grep first. Answering from general knowledge when a note exists is the failure this prevents."
+description: "ALWAYS load before answering anything about the user, their life, or anything they own, watch, read, play or build. Open the matching note in their vault FIRST, then answer from it. Trigger on any mention of a show, film, book or game; their PC, laptop, phone, wifi, network or any hardware; school, work, grades, colleagues; any project; family, friends, food, money, plans, habits or opinions; any \"what's my favourite X\" or \"do you know my...\" question; and on vague references like \"my\", \"mine\", \"the one I told you about\", or a question that only makes sense if you know them. Trigger even when the question sounds casual, generic, or like a joke. ALSO trigger before ever saying a fact is not saved, not recorded, or not in the vault — that claim requires a grep first. ALSO trigger before ever asking a clarifying question (e.g. AskUserQuestion) about a device, app, screenshot or project — check the vault map and the matching project note first. Answering from general knowledge when a note exists is the failure this prevents."
 ---
 
 # Vault First
@@ -70,6 +70,20 @@ Corollary: **a fact that exists but can't be found is a bug in the index, not a
 missing fact.** When a grep finds something a lookup missed, fix the index in the
 same turn — add the row to the relevant `Atlas/About Me/` note and to
 `AIOS/vault-map.md`. Don't just answer the question and move on.
+
+## Rule Three: check the vault before asking a clarifying question
+
+Extends Rule Two. **Asking a clarifying question about a device, app,
+screenshot or project, without first checking `vault-map.md`'s routing table
+and the matching project note, is the same failure as a false "that isn't
+saved."** A same-day or recently-edited project note is the strongest signal
+available.
+
+1. Grep `vault-map.md`'s "Where to look for what" table for a matching row.
+2. If there's a matching note, open it and check what's visible against what
+   it says was installed, running, or done recently.
+3. Only ask if that comes back empty or genuinely ambiguous — and say what you
+   checked.
 
 ## When this fires — assume it does
 
@@ -163,6 +177,8 @@ vault should be better after every session, not just consulted.
 
 - Answer from general knowledge when a note on the subject exists
 - Say a fact isn't saved without having grepped for it in this turn
+- Ask a clarifying question about a device, app or project without checking
+  `vault-map.md` and the matching note first
 - Skip the read because the question sounded casual, small, or funny
 - Say you checked the vault when you didn't
 - Read or write anything under `Privat/`

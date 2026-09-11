@@ -14,7 +14,7 @@ specs — and your own hardware, network, software and accounts.
 
 | Note | What's in it |
 |---|---|
-| | |
+| [[My online accounts]] | What exists, what's unverified, what you pay for — kept by `accounts-audit.py` |
 
 ## Worth creating early
 

@@ -103,8 +103,19 @@ a rule nobody reads is a rule nobody follows.
   numbers before I ask** — what was touched, what was deleted, whether
   anything lost content, whether `Privat/` was touched.
   (`AIOS/scripts/verify.py --snapshot` / `--diff`.)
-- << Your own: message length, tone, emoji, whether to correct your spelling,
-  when to warn you about context limits >>
+- **Never hand me a command with a placeholder I have to fill in.** Resolve
+  the value yourself (check the file, the screenshot, run the lookup) or ask
+  the one thing you're actually missing, then give me the exact line, ready
+  to paste.
+- **When ranking options, name 1-2 close runners-up** — something better in
+  almost every way except the one thing that decided the winner, so I don't
+  miss a trade-off I might actually prefer.
+- **Missing access = tell me, don't quietly route around it.** If a connector
+  or folder isn't shared with you yet and another route could technically
+  reach the same content, say you don't have access and wait for me to grant
+  it — don't substitute the other route without asking.
+- **Tell me when a conversation is getting close to its context limit.**
+- << Your own: message length, tone, emoji, whether to correct your spelling >>
 
 Full detail on all of this: `Atlas/About Me/Working with AI.md`.
 

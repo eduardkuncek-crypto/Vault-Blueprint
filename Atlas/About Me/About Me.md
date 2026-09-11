@@ -16,11 +16,12 @@ when it needs them. When the two disagree, these notes are newer.
 
 | Note | What's in it |
 |---|---|
-| | |
+| [[Money]] | Real balance and spending — kept by `money.py`, empty until you log one |
+| [[Screen time]] | Screen hours and sleep — kept by `screentime.py`, empty until you log one |
 
-*(Empty. The setup interview fills this in — say "set yourself up" if you
-haven't yet. See [[EXAMPLE How I learn]] for what a filled-in note looks like
-— delete it once you've read it.)*
+*(Otherwise empty. The setup interview fills the rest in — say "set yourself
+up" if you haven't yet. See [[EXAMPLE How I learn]] for what a filled-in note
+looks like — delete it once you've read it.)*
 
 ## Suggested notes
 

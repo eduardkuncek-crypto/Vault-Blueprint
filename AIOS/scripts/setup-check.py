@@ -167,6 +167,39 @@ def c_scheduler():
               else "not installed for THIS vault — run setup.py again")
 
 
+def c_optional_jobs():
+    """Report on the two optional scheduled jobs, without counting against
+    the core 3/3 automation total above — neither is expected to be
+    installed on every machine (backup-claude-code only matters if Claude
+    Code is used here; capture-heartbeat only matters once auto-capture is
+    in daily use)."""
+    try:
+        import scheduler
+    except ImportError:
+        return
+    tool, _ = scheduler.available()
+    if tool is None:
+        return
+
+    has_claude_code = (Path.home() / ".claude" / "projects").is_dir()
+    installed = scheduler.is_installed(
+        "backup-claude-code", script_path=SCRIPTS / "backup-claude-code.py")
+    if not has_claude_code:
+        check("  schedule: backup-claude-code", PASS,
+              "not applicable — no Claude Code session folder on this machine")
+    elif installed:
+        check("  schedule: backup-claude-code", PASS, "installed, runs hourly")
+    else:
+        check("  schedule: backup-claude-code", WARN,
+              "optional, not installed — run setup.py again to turn it on")
+
+    installed = scheduler.is_installed(
+        "capture-heartbeat", script_path=SCRIPTS / "capture-heartbeat.py")
+    check("  schedule: capture-heartbeat", PASS if installed else WARN,
+          "installed, runs every 30 min" if installed
+          else "optional, not installed — run setup.py again to turn it on")
+
+
 def c_chat_backup_source():
     # The filename has a hyphen, so it can't be `import`ed normally.
     import importlib.util
@@ -235,6 +268,7 @@ def main():
     c_me_md()
     c_skills()
     c_scheduler()
+    c_optional_jobs()
     c_chat_backup_source()
     c_chat_backup_output()
     c_git()

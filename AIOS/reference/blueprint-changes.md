@@ -57,6 +57,156 @@ are.
 
 ## Changes
 
+### id: screenshot-stamping
+title: A screenshot you send now gets its facts saved permanently, not just read once
+files: AIOS/scripts/shot.py, AIOS/skills/auto-capture/SKILL.md, AIOS/vault-map.md, AIOS/scripts/setup.py
+needs: nothing
+
+Before this, a screenshot got looked at once and the facts in it — coordinates,
+prices, error text, whatever — went into a note if the AI remembered to.
+Six months later the image itself was just a picture again. Now every
+screenshot gets filed into its own dated folder, gets a short note next to it
+saying what it showed and where it came from, and has those same facts
+written invisibly inside the image file itself — so even if you copy the
+picture out of the vault entirely, its story survives with it.
+
+### id: money-tracking
+title: Track your real balance without opening a banking app mid-conversation
+files: AIOS/scripts/money.py, Atlas/About Me/Money.md, AIOS/skill-map.md, AIOS/vault-map.md
+needs: nothing
+
+State a number — "spent 40 on X" or "I've got 350 in the bank" — and it gets
+logged to a running ledger with the balance kept current, instead of living
+only in that one conversation. Ships with an empty ledger; nothing is
+invented on your behalf.
+
+### id: media-worlds-catalog
+title: One page lists everything you're watching, playing, or buying
+files: AIOS/scripts/catalog.py, AIOS/vault-map.md, AIOS/skill-map.md
+needs: nothing
+
+Right now, "what shows am I watching" means an AI opening every note in
+`Atlas/Media/` one at a time. This rebuilds a single page — every show, game,
+book and world by status, plus what you're deciding to buy or have bought —
+so that question is one grep instead of a folder scan.
+
+### id: cooldown-tracking
+title: Waiting periods get a real unlock date, not an eyeballed guess
+files: AIOS/scripts/cooldowns.py, AIOS/skill-map.md
+needs: nothing
+
+A rename cooldown, a free trial ending, a returns window — anything with a
+fixed wait now gets its unlock date computed for real and tracked in
+`Calendar/Cooldowns.md`, with a script to check what's unlocked or coming up
+in the next N days instead of asking an AI to do the date math from memory.
+
+### id: screentime-tracking
+title: Screen time and sleep, logged as you mention them
+files: AIOS/scripts/screentime.py, Atlas/About Me/Screen time.md, AIOS/skill-map.md
+needs: nothing
+
+State an hours number and it's appended to a running log with a rolling
+average available on request. Not a nag, just the data — nothing is flagged
+or judged, it's there if a pattern ever matters to you.
+
+### id: accounts-audit
+title: Get reminded about accounts you signed up for and never finished verifying
+files: AIOS/scripts/accounts-audit.py, Atlas/Reference/My online accounts.md, Atlas/Reference/Reference.md, AIOS/skill-map.md
+needs: nothing
+
+Every account you sign up for gets logged, and anything still sitting
+unverified after two weeks gets flagged so it doesn't just get forgotten
+about — the classic way an old signup becomes a stray subscription or an
+unclaimed account nobody remembers exists.
+
+### id: machine-snapshot
+title: See whether your disk is actually filling up, instead of one stale reading
+files: AIOS/scripts/machine-snapshot.py, AIOS/skill-map.md
+needs: nothing
+
+Paste a `df`/`free`-style disk or RAM reading and it's logged with a
+timestamp, so the trend over weeks is visible instead of a single number that
+goes stale the day after it's written down.
+
+### id: claude-code-backup
+title: If you use Claude Code (the terminal tool), those sessions get backed up too
+files: AIOS/scripts/backup-claude-code.py, AIOS/scripts/setup.py, AIOS/scripts/setup-check.py, AIOS/vault-map.md, AIOS/skill-map.md
+needs: nothing
+
+Until now, only conversations in the Claude desktop app got backed up into
+the vault. If you also use Claude Code from a terminal, those sessions were
+never saved anywhere durable. This adds the same hourly backup for Claude
+Code's own session store — a separate, optional job that only turns itself on
+if it finds evidence Claude Code has actually run on this machine.
+
+### id: capture-heartbeat
+title: A second, mechanical check that nothing got missed
+files: AIOS/scripts/capture-heartbeat.py, AIOS/scripts/setup.py, AIOS/scripts/setup-check.py, AIOS/skills/auto-capture/SKILL.md
+needs: nothing
+
+The AI is supposed to save a fact the moment you say it, but a live
+conversation can miss things. This adds a simple, no-reasoning background
+check — no LLM involved, just clocks — that notices when real chat activity
+happened but nothing got written to today's changes log for 45+ minutes, and
+leaves a flag so it gets looked at. It can't say what was missed, only that
+something probably was.
+
+### id: weekly-digest
+title: Weekly review pulls its own raw material now, instead of opening seven notes by hand
+files: AIOS/scripts/weekly-digest.py, AIOS/skill-map.md
+needs: nothing
+
+Doing a weekly review used to mean an AI opening up to seven daily notes one
+at a time to see what happened. This pulls the week's changes and open/closed
+checkboxes into one digest first — the judgement of "what actually mattered"
+is still yours to write, but the file-reading part is now one command.
+
+### id: vault-first-clarifying-questions
+title: Checks your own notes before asking you a question it could answer itself
+files: AIOS/skills/vault-first/SKILL.md
+needs: nothing
+
+Before this, an AI could ask you "which device is this about?" or "what app
+do you mean?" without first checking whether a project note already answered
+that. Now it checks the vault's own index and the matching project note
+first, and only asks if that comes up genuinely empty.
+
+### id: vault-librarian-duplicate-check
+title: Restored the check that stops the same subject getting two separate notes
+files: AIOS/skills/vault-librarian/SKILL.md
+needs: nothing
+
+The vault has always had a script that checks "does a note for this already
+exist" before creating a new one, but the instructions telling the AI to
+actually run it before writing had drifted out of the skill. Put back, so a
+subject reliably gets one note instead of accidentally getting two under
+slightly different names.
+
+### id: auto-capture-narrower-exception
+title: Capture skips almost nothing now — and options you're still weighing get saved right away
+files: AIOS/skills/auto-capture/SKILL.md
+needs: nothing
+
+Two tightenings to what gets written down automatically. First, the list of
+things that *don't* get captured shrank to a single test: skip only when a
+message has zero personal content in it at all (pure math, a unit
+conversion) — anything with even a small personal detail mixed in still gets
+saved. Second, options you're still weighing (not yet decided) now get
+captured the moment you mention them, instead of waiting until you actually
+pick one — the old behavior could lose a whole comparison if the
+conversation moved on before a decision was made.
+
+### id: me-md-more-defaults
+title: A few more default working habits in the starter file
+files: AIOS/me.md
+needs: nothing
+
+Four more defaults in the "how to work with me" template: never hand you a
+command with a blank you have to fill in yourself; when ranking options, name
+the close runner-up too, not just the winner; tell you plainly when a
+connector or folder isn't shared yet instead of quietly working around it;
+and say something when a conversation is getting close to its context limit.
+
 ### id: setup-checks-catch-up
 title: The self-check now actually checks for all seven skills, and the setup interview reminds itself to index new notes
 files: AIOS/scripts/setup-check.py, AIOS/skills/setup-vault/SKILL.md
