@@ -7,7 +7,7 @@
     "system": "Blueprint owns it. Updated in place unless the user edited it, in which case they're asked."
   },
   "_what": "Every file this blueprint ships, and how much of it belongs to the blueprint versus to the person using it. Read by AIOS/scripts/blueprint-update.py. Generated \u2014 do not hand-edit; change the rules in AIOS/scripts/blueprint-manifest.py instead.",
-  "count": 112,
+  "count": 120,
   "files": {
     ".gitignore": {
       "bytes": 727,
@@ -65,9 +65,9 @@
       "sha256": "6d8565c1783fe409c3b17f73ac738c67f59a568ed12a89a0d4b398cc245cbbd9"
     },
     "AIOS/reference/blueprint-changes.md": {
-      "bytes": 20283,
+      "bytes": 23422,
       "class": "system",
-      "sha256": "af65baf96f2d932de8fff7576616b7cc92e670ed5ecf50dfb9cf2e1abcd65141"
+      "sha256": "befeda8475c71a54d69d70ab27c1076fbb3bc243f288c206316fa5c6cc42b374"
     },
     "AIOS/reference/canon.md": {
       "bytes": 1195,
@@ -110,9 +110,9 @@
       "sha256": "ccba2e76ba5273a0840c3f7dfb6ccffc1316d37df3cf76a88cbcce8f4bb53a8d"
     },
     "AIOS/scripts/backup-claude-code.py": {
-      "bytes": 13566,
+      "bytes": 14035,
       "class": "system",
-      "sha256": "756f25ad8d22a708ecad5a1e5950dde5ad391c4531e8cf931c8a6b90cde59144"
+      "sha256": "25b1ac107056bcd4d250316168471e2d8fc6da87392e24e32d35aaef99ba7425"
     },
     "AIOS/scripts/backup-cowork.py": {
       "bytes": 13954,
@@ -189,6 +189,16 @@
       "class": "system",
       "sha256": "d1ab56b47b60a6d96f1804bfb67c6b63179e7d534c8bd1332398426e7202c44d"
     },
+    "AIOS/scripts/hook-video.py": {
+      "bytes": 6952,
+      "class": "system",
+      "sha256": "34547ccdc15419292319260d9b1d14ff949512133638ef56d881987daaa01012"
+    },
+    "AIOS/scripts/link.py": {
+      "bytes": 33636,
+      "class": "system",
+      "sha256": "beccfd45564270b7ec3433c80ab76b8e285362a7c0c067d1a7b8c4b1b391d540"
+    },
     "AIOS/scripts/logchange.py": {
       "bytes": 20590,
       "class": "system",
@@ -225,9 +235,14 @@
       "sha256": "1269ff5db2aef079e997efe564496af265d8224fa3aded2e340cdcf4deba96f5"
     },
     "AIOS/scripts/paths.py": {
-      "bytes": 8348,
+      "bytes": 8702,
       "class": "system",
-      "sha256": "5b84bba376e775060f4ea2dd47543af12b04c82360bf4e798ca05a3581825291"
+      "sha256": "b5356dc5a07efb30afc0af50ea544f50a5d4b77397302fbe799058253bfd4c30"
+    },
+    "AIOS/scripts/person.py": {
+      "bytes": 13132,
+      "class": "system",
+      "sha256": "b5ad9d263418f1c501b00d44c51e01eaf1d474b5fc9e41c30e888ed7a3a77efb"
     },
     "AIOS/scripts/project-status.py": {
       "bytes": 4237,
@@ -245,9 +260,9 @@
       "sha256": "2bb9f4ed75748134ac1587d03f5c6f99e4a25bd10c193dea941a1cf7115c1f49"
     },
     "AIOS/scripts/screentime.py": {
-      "bytes": 6056,
+      "bytes": 9610,
       "class": "system",
-      "sha256": "45f90d5333b231ed4b67afa6d26980cf541f712b3c8bf14594b089901e1507f1"
+      "sha256": "1fc6b48e05ff62a7c39c9d2e1da8c266a5557acda5047bfc7dbc15dcc1788070"
     },
     "AIOS/scripts/scriptlog.py": {
       "bytes": 3550,
@@ -280,9 +295,9 @@
       "sha256": "3d916dfb8ae2c6c89285a132ff10a94fa00e8c736bc4615eafe3ace7e94f4061"
     },
     "AIOS/scripts/vault-check.py": {
-      "bytes": 11181,
+      "bytes": 11296,
       "class": "system",
-      "sha256": "3d015b9ad6c1828da49f40f94beddd759c8a68091e3929c236e82f4930a181ae"
+      "sha256": "549d0ad33e0912b55b8c46aa17cee1e581d99b0b30b430ed67808c23c0f34099"
     },
     "AIOS/scripts/vault-map.py": {
       "bytes": 8509,
@@ -299,6 +314,11 @@
       "class": "system",
       "sha256": "90707393e80f5618b58bc71343d4128e62355a1cce2f222ce8c9030c55d7aca7"
     },
+    "AIOS/scripts/video.py": {
+      "bytes": 14807,
+      "class": "system",
+      "sha256": "c2516ec1bea0facb12c369ea62c75abf85c7238f3c860823c9f8f75f261c8d6e"
+    },
     "AIOS/scripts/weekly-digest.py": {
       "bytes": 7862,
       "class": "system",
@@ -310,9 +330,9 @@
       "sha256": "7a6ba6783a03bd07aa56e7530d715c20f69f5ebc4ab854437ec4ef223334c134"
     },
     "AIOS/skill-map.md": {
-      "bytes": 10165,
+      "bytes": 11916,
       "class": "brain",
-      "sha256": "6eb3e7f544b94ebc7e316e4c34efee1fa15f293424f08bf868c5b0415bd39bbd"
+      "sha256": "8c2934c99bf87eece1a4b97e90a5f436032481ba22ac64512b20af79069ec2d4"
     },
     "AIOS/skills/README.md": {
       "bytes": 4519,
@@ -320,14 +340,14 @@
       "sha256": "950f7b043ff67363209f9ac06a67d60606bd0878ef99d2b0f559a0f4b47950ae"
     },
     "AIOS/skills/auto-capture/SKILL.md": {
-      "bytes": 24671,
+      "bytes": 25149,
       "class": "system",
-      "sha256": "38f8d3182af54549baf0f908a473c189e850fed5b2b4a2b9159adbbcd3a00787"
+      "sha256": "a69e64e612a30508fbdfbd643747695b185ba8675dd58a66988795bce616d5b5"
     },
     "AIOS/skills/daily-brief/SKILL.md": {
-      "bytes": 3303,
+      "bytes": 3700,
       "class": "system",
-      "sha256": "7d3dd4bacd895bb5ee69045173f62c2cbb3b149749720b92b3a58746038ef783"
+      "sha256": "f7c57a8772a06e6d0d194d99b13fc88c52e4a0b052de314c9d115cab151882cc"
     },
     "AIOS/skills/no-bullshit/SKILL.md": {
       "bytes": 6680,
@@ -374,6 +394,11 @@
       "class": "system",
       "sha256": "0bf985a6cfa3d20a4e6bcdcc9e96a4ad0f2f7aa795aaa9f7308732ce3914db11"
     },
+    "AIOS/templates/person-note.md": {
+      "bytes": 145,
+      "class": "system",
+      "sha256": "17c6985db83c0cb11a61672fdf03bc6942a6895190954c37aa24db4d6bb5566d"
+    },
     "AIOS/templates/project.md": {
       "bytes": 571,
       "class": "system",
@@ -385,9 +410,9 @@
       "sha256": "7c91ff6b47f4b08bf77b3a590e7f02bb1fa6664017172964eb6b747de6b87f7c"
     },
     "AIOS/vault-map.md": {
-      "bytes": 14177,
+      "bytes": 16115,
       "class": "brain",
-      "sha256": "a20309d6a9784b48cd6c9dd1ec94e8fcac50ae1b45b5045d27612f17ec6ce6f7"
+      "sha256": "8fb090b422f5443d56c0996c8ffca1fcbde3dbebbb124c17a4ad4ddb14284c09"
     },
     "Atlas/About Me/About Me.md": {
       "bytes": 1579,
@@ -405,9 +430,9 @@
       "sha256": "2b6a8ae303c5f5215c8a47786e144c205d4292fb6c6120a05bd411b7dbb44be8"
     },
     "Atlas/About Me/Screen time.md": {
-      "bytes": 485,
+      "bytes": 647,
       "class": "seed",
-      "sha256": "7af77f40ce2f174b32cfa31de6a10a587c405a6f46912db098f59b49a438f577"
+      "sha256": "538f46665f70ca7b02320398e38f15585699d78a1e93fc1635fdbb2226bd55f8"
     },
     "Atlas/Atlas.md": {
       "bytes": 1184,
@@ -434,6 +459,16 @@
       "class": "seed",
       "sha256": "dc5d1e913618b823d7b212e26856f1abaffa1d3393fc5986579251ad9404397e"
     },
+    "Atlas/Links/Links.base": {
+      "bytes": 923,
+      "class": "seed",
+      "sha256": "68690c62110aa6f23708eb73865d7ea92b5ee165c200dad16769f93518455a06"
+    },
+    "Atlas/Links/Links.md": {
+      "bytes": 960,
+      "class": "seed",
+      "sha256": "f2e300cdaa16ce1aecc340adfc8784033e77fdc14858b83d57e42c09ca86b603"
+    },
     "Atlas/Media/EXAMPLE Dune.md": {
       "bytes": 1498,
       "class": "setup",
@@ -443,6 +478,11 @@
       "bytes": 881,
       "class": "seed",
       "sha256": "d9c7db113451276885568e6ee4da1d3da685cda4bf33f14d4d442429dad827e2"
+    },
+    "Atlas/People/People.md": {
+      "bytes": 543,
+      "class": "seed",
+      "sha256": "56d598114de8726521c8bdfbee41393e38c4aea76de220576c0ea9bd653d0b35"
     },
     "Atlas/Radar.md": {
       "bytes": 627,
@@ -570,5 +610,5 @@
       "sha256": "6741fa9e7f0219b3e79f7c11de2c8011effa7e703f8a88af53bde3e10f54250a"
     }
   },
-  "generated": "2026-09-11T10:23:08"
+  "generated": "2026-09-18T21:31:03"
 }

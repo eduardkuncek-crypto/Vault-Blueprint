@@ -185,11 +185,18 @@ def backup_sessions():
         return
     for project in sorted(p.name for p in SRC_PROJECTS.iterdir() if p.is_dir()):
         pdir = SRC_PROJECTS / project
-        for fn in sorted(f.name for f in pdir.iterdir()
-                          if f.is_file() and f.name.endswith(".jsonl")):
-            src = pdir / fn
+        # Walk recursively, not just the top level: a session that spawned
+        # subagents stores their transcripts one level deeper, at
+        # <session-uuid>/subagents/agent-*.jsonl. A plain iterdir() never
+        # sees those, so they'd silently never make it into the backup.
+        for src in sorted(pdir.rglob("*.jsonl")):
+            if not src.is_file():
+                continue
+            fn = src.name
+            rel = src.relative_to(pdir)
+            parent_session = rel.parts[0] if len(rel.parts) > 1 else ""
 
-            if copy_if_newer(src, DEST_RAW / project / fn):
+            if copy_if_newer(src, DEST_RAW / project / rel):
                 stats["raw"] += 1
             else:
                 stats["raw_skipped"] += 1
@@ -200,7 +207,8 @@ def backup_sessions():
                     stem = fn[:-6]
                     proj = md.split("project: ")[1].split("\n")[0]
                     date = md.split("date: ")[1][:10]
-                    name = f"{date}-{proj}-{stem[:8]}.md"
+                    tag = f"-{parent_session[:8]}-subagent" if parent_session else ""
+                    name = f"{date}-{proj}-{stem[:8]}{tag}.md"
                     p = DEST_MD / name
                     p.parent.mkdir(parents=True, exist_ok=True)
                     old = p.read_text(encoding="utf-8") if p.exists() else ""

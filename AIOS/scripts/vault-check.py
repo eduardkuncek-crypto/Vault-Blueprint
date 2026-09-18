@@ -40,6 +40,7 @@ STATUS_OK = {
     "Atlas/Media": {"watching", "reading", "playing", "finished", "dropped",
                     "on hold"},
     "Atlas/Worlds": {"active", "parked", "dead", "unconfirmed"},
+    "Atlas/Links": {"unread", "read", "useful", "dead"},
 }
 
 # folder -> index note basename. A folder with a .base file is exempt from the
@@ -51,6 +52,8 @@ INDEXED = {
     "Atlas/Knowledge": "Knowledge",
     "Atlas/Clippings": "Clippings",
     "Atlas/About Me": "About Me",
+    "Atlas/Links": "Links",
+    "Atlas/People": "People",
     "Efforts": "Efforts",
 }
 

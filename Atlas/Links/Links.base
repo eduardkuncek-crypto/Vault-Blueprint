@@ -1,0 +1,57 @@
+filters:
+  and:
+    - file.inFolder("Atlas/Links")
+    - file.ext == "md"
+    - '!file.hasTag("index")'
+properties:
+  file.name:
+    displayName: Link
+  what:
+    displayName: What it is
+  site:
+    displayName: Site
+  status:
+    displayName: Status
+  saved:
+    displayName: Saved
+views:
+  - type: table
+    name: Unread
+    filters:
+      and:
+        - status == "unread"
+    order:
+      - file.name
+      - what
+      - site
+      - saved
+  - type: table
+    name: Everything
+    groupBy:
+      property: status
+      direction: ASC
+    order:
+      - file.name
+      - what
+      - site
+      - status
+      - saved
+  - type: table
+    name: Worth keeping
+    filters:
+      and:
+        - status == "useful"
+    order:
+      - file.name
+      - what
+      - site
+      - saved
+  - type: table
+    name: Dead
+    filters:
+      and:
+        - status == "dead"
+    order:
+      - file.name
+      - site
+      - saved

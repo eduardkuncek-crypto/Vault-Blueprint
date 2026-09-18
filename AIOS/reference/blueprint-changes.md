@@ -57,6 +57,64 @@ are.
 
 ## Changes
 
+### id: video-transcripts
+title: Videos you send actually get watched, not guessed at from the thumbnail
+files: AIOS/scripts/video.py, AIOS/scripts/hook-video.py, AIOS/vault-map.md, AIOS/skill-map.md
+needs: nothing (it downloads its own copy of yt-dlp on first use)
+
+Before this, an AI answering about a video you sent was working from the
+title and thumbnail — nothing actually opened it. Now a video link gets its
+real transcript pulled and cached, and if that can't be done (private video,
+no captions, network down), the AI is told plainly instead of guessing.
+Optional one-time install for the strongest version — `python3
+AIOS/scripts/hook-video.py --install-hook` — wires it in so the transcript
+is already there the moment you paste the link, with no dependence on the
+AI choosing to fetch it.
+
+### id: link-notes
+title: Every link you send gets saved as its own note
+files: AIOS/scripts/link.py, AIOS/vault-map.md, AIOS/skill-map.md, AIOS/scripts/vault-check.py, Atlas/Links/Links.md, Atlas/Links/Links.base
+needs: nothing
+
+A URL pasted into a chat used to be gone the moment the chat scrolled. Now
+each one gets its own note in `Atlas/Links/` — the real page title, what it
+is, and a status (unread/read/useful/dead) — fetched automatically, with an
+empty space at the bottom that's yours and never gets touched by an update.
+Re-sending the same link updates its note instead of creating a duplicate.
+
+### id: person-notes
+title: Family, friends and teachers you mention get their own note
+files: AIOS/scripts/person.py, AIOS/templates/person-note.md, AIOS/vault-map.md, AIOS/skill-map.md, AIOS/skills/auto-capture/SKILL.md, AIOS/scripts/vault-check.py, Atlas/People/People.md
+needs: nothing
+
+Mention someone specific — a sibling, a friend, a teacher — and they now get
+their own small note the first time, with new details appended and dated
+every time they come up again, instead of getting folded into a general
+"family" or "friends" note where a specific detail about one person is easy
+to lose. Works for an unnamed person too ("my maths teacher") until a name
+is known.
+
+### id: screentime-check
+title: Screen time / sleep tracking can warn you instead of sitting silent
+files: AIOS/scripts/screentime.py, Atlas/About Me/Screen time.md, AIOS/skills/daily-brief/SKILL.md, AIOS/skill-map.md
+needs: nothing
+
+The existing screen-time log can now watch itself: a near-zero sleep night,
+a sustained low average, or a downward trend over two weeks gets flagged —
+quietly, only when it's actually worth mentioning, and only once you've
+logged at least one number. Wired into the daily brief if you use one, so
+it can surface on its own instead of needing to be asked for.
+
+### id: claude-code-backup-subagents
+title: Claude Code backup now catches transcripts from spawned subagents too
+files: AIOS/scripts/backup-claude-code.py
+needs: nothing
+
+If a Claude Code session spawns a subagent, its transcript is stored one
+folder deeper than a normal session — and the backup script was only ever
+looking at the top level, so those transcripts silently never made it into
+the vault. Fixed; nothing to do on your end.
+
 ### id: screenshot-stamping
 title: A screenshot you send now gets its facts saved permanently, not just read once
 files: AIOS/scripts/shot.py, AIOS/skills/auto-capture/SKILL.md, AIOS/vault-map.md, AIOS/scripts/setup.py, AIOS/history/screenshots/Screenshots.md

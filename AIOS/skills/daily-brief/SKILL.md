@@ -40,6 +40,11 @@ writing filler.
    useful half.
 7. **Suggested focus** — exactly one thing. Pick what unblocks the most other
    work, and say in one line why.
+8. **Screen time / sleep check** — if `Atlas/About Me/Screen time.md` has any
+   log rows, run `python3 AIOS/scripts/screentime.py --check`. Add a line to
+   the brief if it prints `WARN`, `UNARMED`, or `STALE` — silent only on `OK`,
+   same no-daily-nag rule as everywhere else in this list. Skip the whole step
+   if the note has never been logged to — an unused check has nothing to say.
 
 ## After writing
 

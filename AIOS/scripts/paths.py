@@ -75,11 +75,13 @@ HISTORY_COWORK = VAULT / "AIOS" / "history" / "chat-history" / "cowork"
 HISTORY_COWORK_RAW = VAULT / "AIOS" / "history" / "chat-history" / "cowork-raw"
 HISTORY_CURATED = VAULT / "AIOS" / "history" / "chat-history" / "curated"
 HISTORY_BLUEPRINT_UPDATES = VAULT / "AIOS" / "history" / "blueprint-updates"
+TRANSCRIPTS = VAULT / "AIOS" / "history" / "transcripts"
 
 # ---- AIOS/templates/ ----
 TEMPLATES = VAULT / "AIOS" / "templates"
 DAILY_TEMPLATE = VAULT / "AIOS" / "templates" / "daily-note.md"
 EVENT_TEMPLATE = VAULT / "AIOS" / "templates" / "event-note.md"
+PERSON_TEMPLATE = VAULT / "AIOS" / "templates" / "person-note.md"
 
 # ---- AIOS/skills/ ----
 SKILLS_MIRROR = VAULT / "AIOS" / "skills"
@@ -99,6 +101,11 @@ CLIPPINGS = VAULT / "Atlas" / "Clippings"
 MEDIA = VAULT / "Atlas" / "Media"
 WORLDS = VAULT / "Atlas" / "Worlds"
 RADAR = VAULT / "Atlas" / "Radar.md"
+LINKS_DIR = VAULT / "Atlas" / "Links"
+LINKS = VAULT / "Atlas" / "Links" / "Links.md"
+LINKS_BASE = VAULT / "Atlas" / "Links" / "Links.base"
+PEOPLE = VAULT / "Atlas" / "People"
+PEOPLE_INDEX = VAULT / "Atlas" / "People" / "People.md"
 
 # ---- Calendar/ ----
 # Flat by design here: Calendar/Daily/YYYY-MM-DD.md, Calendar/Weekly/YYYY-Wnn.md.

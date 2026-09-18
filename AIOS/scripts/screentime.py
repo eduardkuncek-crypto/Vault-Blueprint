@@ -13,10 +13,15 @@ Usage:
 
     python3 AIOS/scripts/screentime.py --list [--last 14]
     python3 AIOS/scripts/screentime.py --avg [--last 14]   # rolling average
+    python3 AIOS/scripts/screentime.py --check             # warning system, silent if fine
 
-Judgement doesn't belong in this script's output — it only tracks the
-number, it doesn't editorialize. A trend line is more useful than a lecture,
-and it's also all this script is equipped to produce.
+Judgement doesn't belong in --list/--avg output — those just track the
+number, they don't editorialize. `--check` is different on purpose: it's a
+threshold-based warning system meant to be run automatically (e.g. from a
+daily-brief routine) and only speaks up when a real threshold is crossed —
+same pattern as a cooldowns/grades `--check`. Printing nothing worth
+surfacing means nothing gets added to the day's brief. That's by design: a
+warning that fires every day trains a person to ignore it.
 
 No dependencies. Plain stdlib.
 """
@@ -90,8 +95,11 @@ def cmd_add(args) -> int:
     else:
         date_str = dt.date.today().isoformat()
 
+    # Both cells are independently optional — don't force a guessed number into
+    # the one that wasn't actually given. "?" means genuinely unknown, not zero.
+    hours_cell = f"**{args.hours:g}h**" if args.hours is not None else "?"
     sleep_cell = f"{args.sleep:g}" if args.sleep is not None else ""
-    row = f"| {date_str} | **{args.hours:g}h** | {sleep_cell} | {safe_cell(args.note)} |"
+    row = f"| {date_str} | {hours_cell} | {sleep_cell} | {safe_cell(args.note)} |"
 
     with locked(NOTE):
         if not NOTE.exists():
@@ -104,7 +112,12 @@ def cmd_add(args) -> int:
 
     print(f"screentime: logged — {row}")
     rel = P.relative(NOTE)
-    what = f"Screen time: {args.hours:g}h" + (f", sleep {args.sleep:g}h" if args.sleep is not None else "")
+    parts = []
+    if args.hours is not None:
+        parts.append(f"{args.hours:g}h screen")
+    if args.sleep is not None:
+        parts.append(f"sleep {args.sleep:g}h")
+    what = "Screen time: " + ", ".join(parts) if parts else "Screen time: logged"
     subprocess.run([sys.executable or "python3", str(P.SCRIPTS / "logchange.py"), what, rel],
                     check=False)
     return 0
@@ -123,10 +136,10 @@ def load_rows():
         if len(cells) < 5:
             continue
         m = re.search(r"[\d.]+", cells[2])
-        if not m:
-            continue
         sleep_m = re.search(r"[\d.]+", cells[3])
-        out.append({"date": cells[1], "hours": float(m.group(0)),
+        if not m and not sleep_m:
+            continue  # row has neither number, nothing usable
+        out.append({"date": cells[1], "hours": float(m.group(0)) if m else None,
                      "sleep": float(sleep_m.group(0)) if sleep_m else None,
                      "note": cells[4]})
     return out
@@ -138,8 +151,9 @@ def cmd_list(last: int) -> int:
         print("screentime: nothing logged yet.")
         return 0
     for r in rows:
+        screen = f"{r['hours']:g}h screen" if r["hours"] is not None else "screen ?"
         sleep = f"{r['sleep']:g}h sleep" if r["sleep"] is not None else "sleep ?"
-        print(f"{r['date']}  {r['hours']:g}h screen  {sleep}  {r['note']}")
+        print(f"{r['date']}  {screen}  {sleep}  {r['note']}")
     return 0
 
 
@@ -148,10 +162,69 @@ def cmd_avg(last: int) -> int:
     if not rows:
         print("screentime: nothing logged yet.")
         return 0
-    avg_hours = sum(r["hours"] for r in rows) / len(rows)
+    hours = [r["hours"] for r in rows if r["hours"] is not None]
     sleeps = [r["sleep"] for r in rows if r["sleep"] is not None]
-    print(f"screentime: last {len(rows)} entries — avg screen {avg_hours:.1f}h/day"
-          + (f", avg sleep {sum(sleeps)/len(sleeps):.1f}h/night" if sleeps else ""))
+    parts = [f"last {len(rows)} entries"]
+    parts.append(f"avg screen {sum(hours)/len(hours):.1f}h/day" if hours else "no screen data")
+    if sleeps:
+        parts.append(f"avg sleep {sum(sleeps)/len(sleeps):.1f}h/night")
+    print("screentime: " + " — ".join(parts))
+    return 0
+
+
+SLEEP_TARGET = 8.0  # AASM/National Sleep Foundation floor for teens; adjust
+                     # for an adult household — see Atlas/About Me/Screen time.md
+
+
+def cmd_check() -> int:
+    """Not silent by default — silent only once it's actually armed and fine.
+    A check with no input just looks like nothing's wrong, which is worse than
+    saying nothing at all."""
+    rows = load_rows()
+    fired = False
+
+    sleep_rows = [r for r in rows if r["sleep"] is not None]
+    if not sleep_rows:
+        print("UNARMED sleep: never logged once — this check has no data and does "
+              "nothing until a sleep number is stated, once, in any conversation.")
+        return 0
+
+    last_date = dt.date.fromisoformat(sleep_rows[-1]["date"])
+    days_quiet = (dt.date.today() - last_date).days
+    if days_quiet > 7:
+        print(f"STALE sleep: last logged {days_quiet}d ago ({sleep_rows[-1]['date']}) — "
+              f"the check has gone quiet because it has nothing new to look at, not "
+              f"because sleep's been fine.")
+        fired = True
+
+    recent = sleep_rows[-7:]
+    avg7 = sum(r["sleep"] for r in recent) / len(recent)
+
+    last3 = sleep_rows[-3:]
+    zero_nights = [r for r in last3 if r["sleep"] <= 1.0]
+    if zero_nights:
+        dates = ", ".join(r["date"] for r in zero_nights)
+        print(f"WARN sleep: near-zero night logged ({dates}) — acute deprivation hits "
+              f"attention/memory within 1-7 nights.")
+        fired = True
+
+    if avg7 < SLEEP_TARGET - 1.5:  # meaningfully below target, not just a rounding gap
+        print(f"WARN sleep: {avg7:.1f}h/night avg over last {len(recent)} logged nights, "
+              f"target is {SLEEP_TARGET:g}h — memory consolidation happens during sleep, "
+              f"this isn't a slow effect.")
+        fired = True
+
+    if len(sleep_rows) >= 10:
+        prev = sleep_rows[-14:-7] if len(sleep_rows) >= 14 else None
+        if prev:
+            avg_prev = sum(r["sleep"] for r in prev) / len(prev)
+            if avg7 < avg_prev - 1.0:
+                print(f"WARN sleep: trending down — {avg_prev:.1f}h avg two weeks ago vs "
+                      f"{avg7:.1f}h avg this week.")
+                fired = True
+
+    if not fired:
+        print(f"screentime: sleep OK — {avg7:.1f}h/night avg over last {len(recent)} logged nights.")
     return 0
 
 
@@ -164,14 +237,17 @@ def main() -> int:
     ap.add_argument("--note", default="", help="free text")
     ap.add_argument("--list", action="store_true")
     ap.add_argument("--avg", action="store_true", help="rolling average")
+    ap.add_argument("--check", action="store_true", help="warning system — silent if within range")
     ap.add_argument("--last", type=int, default=14)
     args = ap.parse_args()
 
+    if args.check:
+        return cmd_check()
     if args.list:
         return cmd_list(args.last)
     if args.avg:
         return cmd_avg(args.last)
-    if args.hours is not None:
+    if args.hours is not None or args.sleep is not None:
         return cmd_add(args)
     ap.print_help()
     return 1
